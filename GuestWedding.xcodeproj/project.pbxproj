@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9D032CD31FA81BB10081D840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CD21FA81BB10081D840 /* AppDelegate.swift */; };
-		9D032CD51FA81BB10081D840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CD41FA81BB10081D840 /* ViewController.swift */; };
 		9D032CD81FA81BB10081D840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D032CD61FA81BB10081D840 /* Main.storyboard */; };
 		9D032CDA1FA81BB10081D840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D032CD91FA81BB10081D840 /* Assets.xcassets */; };
 		9D032CDD1FA81BB10081D840 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D032CDB1FA81BB10081D840 /* LaunchScreen.storyboard */; };
+		9D032CE61FA8206E0081D840 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CE51FA8206E0081D840 /* BaseViewController.swift */; };
+		9D032CE81FA820E80081D840 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CE71FA820E80081D840 /* MainViewController.swift */; };
+		9D032CEA1FA827280081D840 /* SiginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CE91FA827280081D840 /* SiginViewController.swift */; };
+		9D032CEC1FA8275D0081D840 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */; };
+		9D032CEE1FA82CD90081D840 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CED1FA82CD90081D840 /* FollowViewController.swift */; };
+		9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CEF1FA82CF20081D840 /* SeatViewController.swift */; };
+		9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF11FA82D330081D840 /* ChatViewController.swift */; };
+		9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF31FA82D400081D840 /* DetailChatViewController.swift */; };
 		A020E09C4BAD7A23CE06840E /* Pods_GuestWedding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3D95DFF2837B68A24F4236 /* Pods_GuestWedding.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +27,18 @@
 		6AA9B141112A98D588C6DD2B /* Pods-GuestWedding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuestWedding.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuestWedding/Pods-GuestWedding.release.xcconfig"; sourceTree = "<group>"; };
 		9D032CCF1FA81BB10081D840 /* GuestWedding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuestWedding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D032CD21FA81BB10081D840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D032CD41FA81BB10081D840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D032CD71FA81BB10081D840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D032CD91FA81BB10081D840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D032CDC1FA81BB10081D840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D032CDE1FA81BB10081D840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D032CE51FA8206E0081D840 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9D032CE71FA820E80081D840 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9D032CE91FA827280081D840 /* SiginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiginViewController.swift; sourceTree = "<group>"; };
+		9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		9D032CED1FA82CD90081D840 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		9D032CEF1FA82CF20081D840 /* SeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
+		9D032CF11FA82D330081D840 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		9D032CF31FA82D400081D840 /* DetailChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
 		AA7DD4806FB03F00C6A1FBAC /* Pods-GuestWedding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuestWedding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuestWedding/Pods-GuestWedding.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,13 +93,28 @@
 			isa = PBXGroup;
 			children = (
 				9D032CD21FA81BB10081D840 /* AppDelegate.swift */,
-				9D032CD41FA81BB10081D840 /* ViewController.swift */,
 				9D032CD61FA81BB10081D840 /* Main.storyboard */,
+				9D032CE51FA8206E0081D840 /* BaseViewController.swift */,
+				9D032CE71FA820E80081D840 /* MainViewController.swift */,
+				9D032CE91FA827280081D840 /* SiginViewController.swift */,
+				9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */,
+				9D032CED1FA82CD90081D840 /* FollowViewController.swift */,
+				9D032CEF1FA82CF20081D840 /* SeatViewController.swift */,
+				9D032CF11FA82D330081D840 /* ChatViewController.swift */,
+				9D032CF31FA82D400081D840 /* DetailChatViewController.swift */,
+				9D032CE41FA81DF40081D840 /* Util */,
+			);
+			path = GuestWedding;
+			sourceTree = "<group>";
+		};
+		9D032CE41FA81DF40081D840 /* Util */ = {
+			isa = PBXGroup;
+			children = (
 				9D032CD91FA81BB10081D840 /* Assets.xcassets */,
 				9D032CDB1FA81BB10081D840 /* LaunchScreen.storyboard */,
 				9D032CDE1FA81BB10081D840 /* Info.plist */,
 			);
-			path = GuestWedding;
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,8 +250,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D032CD51FA81BB10081D840 /* ViewController.swift in Sources */,
+				9D032CE81FA820E80081D840 /* MainViewController.swift in Sources */,
+				9D032CEA1FA827280081D840 /* SiginViewController.swift in Sources */,
+				9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */,
+				9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */,
 				9D032CD31FA81BB10081D840 /* AppDelegate.swift in Sources */,
+				9D032CEE1FA82CD90081D840 /* FollowViewController.swift in Sources */,
+				9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */,
+				9D032CE61FA8206E0081D840 /* BaseViewController.swift in Sources */,
+				9D032CEC1FA8275D0081D840 /* LeftMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GuestWedding/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ctvtran.kien.GuestWedding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,6 +399,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GuestWedding/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ctvtran.kien.GuestWedding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,6 +426,7 @@
 				9D032CE31FA81BB10081D840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
