@@ -17,4 +17,18 @@ struct Member {
     var dateWoman: String?
     var numberGuestMan: String?
     var numberGuestWoman: String?
+    var linkweb: String?
+    
+    init(json: JSON) {
+        manName = json[""].string
+        nameWoman = json[""].string
+        dateMan = json[""].string
+        dateWoman = json[""].string
+        numberGuestMan = json[""].string
+        numberGuestWoman = json[""].string
+        linkweb = "http://www.freewed.com.tw/app/LOVE.aspx?ACCT=ann730204"
+    }
+    
+    static var shared = Member()
+    init() {}
 }

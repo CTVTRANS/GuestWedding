@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import SwiftyJSON
 
 class BaseViewController: UIViewController {
 
@@ -32,9 +33,10 @@ class BaseViewController: UIViewController {
     }
     
     func popToRootNavigation() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController
-        let navigationController: UINavigationController = UINavigationController.init(rootViewController: vc!)
-        swVC?.pushFrontViewController(navigationController, animated: true)
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController
+//        let navigationController: UINavigationController = UINavigationController.init(rootViewController: vc!)
+//        swVC?.pushFrontViewController(navigationController, animated: true)
+        navigationController?.popToRootViewController(animated: false)
         
     }
     

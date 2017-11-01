@@ -30,9 +30,8 @@ class LeftMenuViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        table.tableFooterView = UIView()
     }
-
 }
 
 extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
@@ -44,5 +43,34 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? LeftMenuCell
         cell?.binData(name: arrayMenu[indexPath.row], index: indexPath.row)
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        table.deselectRow(at: indexPath, animated: true)
+        let navigationVC = swVC?.frontViewController as? UINavigationController
+        var vc: BaseViewController? = nil
+        switch indexPath.row {
+        case 0:
+            UIApplication.shared.openURL(URL(string: Member.shared.linkweb!)!)
+            swVC?.revealToggle(animated: true)
+            return
+        case 1:
+            vc = storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
+        case 2:
+            vc = storyboard?.instantiateViewController(withIdentifier: "SeatViewController") as? SeatViewController
+        case 3:
+            vc = storyboard?.instantiateViewController(withIdentifier: "FollowViewController") as? FollowViewController
+        case 4:
+            swVC?.revealToggle(animated: true)
+            return
+        case 5:
+            swVC?.revealToggle(animated: true)
+            return
+        default:
+            break
+        }
+        navigationVC?.pushViewController(vc!, animated: false)
+//        let navigationController: UINavigationController = UINavigationController.init(rootViewController: vc!)
+        swVC?.pushFrontViewController(navigationVC, animated: true)
     }
 }

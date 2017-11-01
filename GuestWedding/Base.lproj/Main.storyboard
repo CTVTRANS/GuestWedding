@@ -72,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bax-jA-nci">
-                                <rect key="frame" x="142" y="113" width="37.5" height="21"/>
+                                <rect key="frame" x="141.5" y="113" width="37.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.1803921568627451" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -95,9 +95,9 @@
                                     </constraint>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚禮團隊 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op3-LN-tz0" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
-                                <rect key="frame" x="88.5" y="189" width="143" height="21"/>
-                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚禮團隊 2017/11/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op3-LN-tz0" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
+                                <rect key="frame" x="50" y="189" width="221" height="22"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -110,9 +110,9 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚禮團隊 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5R-yF-vyx" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
-                                <rect key="frame" x="88.5" y="226" width="143" height="21"/>
-                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚禮團隊 2017/11/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5R-yF-vyx" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
+                                <rect key="frame" x="49.5" y="227" width="221" height="22"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -126,7 +126,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1K-fA-du3" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
-                                <rect key="frame" x="145.5" y="289" width="30.5" height="17.5"/>
+                                <rect key="frame" x="145.5" y="291" width="30.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                 <color key="textColor" red="0.72549019607843135" green="0.23529411764705882" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-ce-O6n" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
-                                <rect key="frame" x="145.5" y="311.5" width="30.5" height="17.5"/>
+                                <rect key="frame" x="145.5" y="313.5" width="30.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                 <color key="textColor" red="0.72549019607843135" green="0.23529411764705882" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -181,6 +181,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrm-RP-oIP">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,9 +189,12 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pressedShowFolow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I77-T4-0e2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Jrm-RP-oIP" secondAttribute="bottom" id="RVQ-Ho-bNz"/>
                                     <constraint firstItem="Jrm-RP-oIP" firstAttribute="leading" secondItem="j53-qf-wVS" secondAttribute="leading" id="T6G-nw-ia3"/>
@@ -238,6 +242,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNb-9W-NkR">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
@@ -245,9 +250,12 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pressedQAWeb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xKc-hv-HfI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="yNb-9W-NkR" firstAttribute="leading" secondItem="Lhq-gw-saX" secondAttribute="leading" id="KHa-V6-aRq"/>
                                     <constraint firstItem="kKB-J5-6dz" firstAttribute="centerY" secondItem="Lhq-gw-saX" secondAttribute="centerY" id="Nve-F6-8cT"/>
@@ -301,6 +309,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efU-ks-otI">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
@@ -308,9 +317,12 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pressedShowSeat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSV-m6-Bf5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="efU-ks-otI" firstAttribute="leading" secondItem="V4c-Jt-Ld3" secondAttribute="leading" id="H8z-RD-wjE"/>
                                     <constraint firstItem="QOn-2X-ECo" firstAttribute="leading" secondItem="V4c-Jt-Ld3" secondAttribute="leading" constant="8" id="Mx2-ec-JgB">
@@ -364,6 +376,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQf-Gd-leW">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
@@ -371,9 +384,12 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pressedMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rka-b5-4xa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="VQf-Gd-leW" secondAttribute="trailing" id="1Wz-Ek-kQH"/>
                                     <constraint firstAttribute="bottom" secondItem="VQf-Gd-leW" secondAttribute="bottom" id="7zN-kb-2J2"/>
@@ -403,6 +419,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedOpenWeb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7CC-Yi-rdC"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vil-7z-2eO">
                                 <rect key="frame" x="0.0" y="536" width="320" height="32"/>
@@ -548,6 +567,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pBm-0x-4hj"/>
+                    <connections>
+                        <outlet property="countDownMan" destination="D1K-fA-du3" id="NBl-ix-OXe"/>
+                        <outlet property="countDownWoman" destination="3i8-ce-O6n" id="YlF-JG-FTq"/>
+                        <outlet property="dateMan" destination="op3-LN-tz0" id="n1B-7c-Rs4"/>
+                        <outlet property="dateWoman" destination="X5R-yF-vyx" id="0jE-5X-UOb"/>
+                        <outlet property="nameCompany" destination="Ix2-fD-ohl" id="24g-nU-zTG"/>
+                        <outlet property="nameMan" destination="UzB-33-BH5" id="DkO-G8-j6c"/>
+                        <outlet property="nameWoman" destination="d2g-q7-72a" id="zyB-Lz-uTu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -1705,7 +1733,7 @@
             </objects>
             <point key="canvasLocation" x="6053" y="730"/>
         </scene>
-        <!--婚禮籌備平台-->
+        <!--Chat View Controller-->
         <scene sceneID="MDF-Zj-UK7">
             <objects>
                 <viewController storyboardIdentifier="ChatViewController" id="DvF-Uy-wx0" customClass="ChatViewController" customModule="GuestWedding" customModuleProvider="target" sceneMemberID="viewController">
@@ -1867,9 +1895,6 @@
                                                 <constraint firstItem="osq-WQ-inO" firstAttribute="centerY" secondItem="K18-23-vNc" secondAttribute="centerY" id="x1u-cu-rDd"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="hightOffAvatar" destination="g0l-wx-49a" id="8S4-Hx-qMU"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1879,7 +1904,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxM-zH-jbc">
                                         <rect key="frame" x="9" y="0.0" width="41" height="41"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sendMessage" translatesAutoresizingMaskIntoConstraints="NO" id="W2B-8e-MaG">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2B-8e-MaG">
                                                 <rect key="frame" x="12" y="11" width="18" height="20"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -1953,7 +1978,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5z-VO-m61">
@@ -2025,16 +2050,6 @@
                             <constraint firstAttribute="trailing" secondItem="0G0-Eu-3lS" secondAttribute="trailing" constant="46" id="xrt-tZ-p76"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="婚禮籌備平台" id="vaB-DM-nW4">
-                        <barButtonItem key="backBarButtonItem" title=" " id="4Q3-rr-7Du"/>
-                        <barButtonItem key="leftBarButtonItem" image="ic_leftButton" id="VJS-N2-yh3"/>
-                        <barButtonItem key="rightBarButtonItem" image="ic_rightButton" id="XDf-tC-RMb"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="contrainsReplayView" destination="FuU-dU-OKg" id="Ao3-2h-dNo"/>
-                        <outlet property="contraintTextMessage" destination="Ll3-eP-1wR" id="UJF-no-Eqg"/>
-                        <outlet property="hightOfTextView" destination="8Kd-Cz-Cmq" id="sKk-5W-Nbm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ht2-c5-V5Z" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,7 +23,7 @@ class AddMemberTask: LKNetwork {
         return followMemberURL + "id=" + Guest.shared().idGuest!
     }
     
-    override func parameters() -> [String : Any] {
+    override func parameters() -> [String: Any] {
         return ["todo": todo, "MemberList": member]
     }
     

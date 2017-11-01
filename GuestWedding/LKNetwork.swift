@@ -65,6 +65,8 @@ class LKNetwork: NSObject {
         session = URLSession(configuration: configuration)
     }
     
+    // MARK: Call Request
+    
     func requestServer(sucess: @escaping BlockSucess, failure: @escaping BlockFailure) {
         if !isInternetAvailable() {
             failure("No Internet Access")
@@ -125,5 +127,4 @@ class LKNetwork: NSObject {
     func dataWithResponse(_ response: Any) -> Any {
         return response
     }
-    
 }
