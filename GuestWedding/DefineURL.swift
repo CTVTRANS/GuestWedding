@@ -9,7 +9,9 @@
 import UIKit
 
 let baseURL = "http://www.freewed.com.tw"
+
 let siginURL = "/api/GetGuestInfo.aspx?"
+let followMemberURL = "/api/UpdateData.aspx?"
 
 class DefineURL: NSObject {
 

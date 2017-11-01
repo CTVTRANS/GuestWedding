@@ -27,6 +27,8 @@
 		9DF3A5311FA86689000FCED2 /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */; };
 		9DF3A5331FA86692000FCED2 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A5321FA86692000FCED2 /* Calibri.ttf */; };
 		9DFC2E441FA9A7D200059A3D /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC2E431FA9A7D200059A3D /* Guest.swift */; };
+		9DFC2E471FA9B6BC00059A3D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC2E461FA9B6BC00059A3D /* Member.swift */; };
+		9DFC2E4B1FA9B88E00059A3D /* AddMemberTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC2E4A1FA9B88E00059A3D /* AddMemberTask.swift */; };
 		A020E09C4BAD7A23CE06840E /* Pods_GuestWedding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3D95DFF2837B68A24F4236 /* Pods_GuestWedding.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
 		9DF3A5321FA86692000FCED2 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		9DFC2E431FA9A7D200059A3D /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		9DFC2E461FA9B6BC00059A3D /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		9DFC2E4A1FA9B88E00059A3D /* AddMemberTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemberTask.swift; sourceTree = "<group>"; };
 		AA7DD4806FB03F00C6A1FBAC /* Pods-GuestWedding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuestWedding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuestWedding/Pods-GuestWedding.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +143,7 @@
 			children = (
 				9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */,
 				9DCDEE4F1FA982360055FE59 /* SiginTask.swift */,
+				9DFC2E4A1FA9B88E00059A3D /* AddMemberTask.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				9DFC2E431FA9A7D200059A3D /* Guest.swift */,
+				9DFC2E461FA9B6BC00059A3D /* Member.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -320,8 +326,10 @@
 			files = (
 				9DCDEE531FA988350055FE59 /* DefineURL.swift in Sources */,
 				9D032CE81FA820E80081D840 /* MainViewController.swift in Sources */,
+				9DFC2E4B1FA9B88E00059A3D /* AddMemberTask.swift in Sources */,
 				9D032CEA1FA827280081D840 /* SiginViewController.swift in Sources */,
 				9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */,
+				9DFC2E471FA9B6BC00059A3D /* Member.swift in Sources */,
 				9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */,
 				9DCDEE4E1FA976300055FE59 /* Extension.swift in Sources */,
 				9D032CD31FA81BB10081D840 /* AppDelegate.swift in Sources */,
