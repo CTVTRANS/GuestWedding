@@ -56,7 +56,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-33-BH5">
                                 <rect key="frame" x="94.5" y="79" width="37.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.41176470588235292" green="0.33333333333333331" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
@@ -65,14 +65,14 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2g-q7-72a">
                                 <rect key="frame" x="188" y="80" width="37.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.41176470588235292" green="0.33333333333333331" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bax-jA-nci">
-                                <rect key="frame" x="141.5" y="113" width="37.5" height="21"/>
+                                <rect key="frame" x="142" y="113" width="37.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.1803921568627451" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -95,9 +95,9 @@
                                     </constraint>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op3-LN-tz0" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
-                                <rect key="frame" x="138.5" y="189" width="44.5" height="24.5"/>
-                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚禮團隊 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="op3-LN-tz0" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
+                                <rect key="frame" x="88.5" y="189" width="143" height="21"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -105,14 +105,14 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                        <color key="value" red="1" green="0.58823529409999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.31372549019607843" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5R-yF-vyx" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
-                                <rect key="frame" x="138.5" y="229.5" width="44.5" height="24.5"/>
-                                <fontDescription key="fontDescription" name="Calibri-Bold" family="Calibri" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚禮團隊 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5R-yF-vyx" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
+                                <rect key="frame" x="88.5" y="226" width="143" height="21"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -120,27 +120,39 @@
                                         <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                        <color key="value" red="1" green="0.58823529411764708" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.31372549019607843" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1K-fA-du3">
-                                <rect key="frame" x="145.5" y="296" width="30.5" height="17.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1K-fA-du3" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
+                                <rect key="frame" x="145.5" y="289" width="30.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.72549019607843135" green="0.23529411764705882" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-ce-O6n">
-                                <rect key="frame" x="145.5" y="318.5" width="30.5" height="17.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-ce-O6n" customClass="OutlineLabel" customModule="GuestWedding" customModuleProvider="target">
+                                <rect key="frame" x="145.5" y="311.5" width="30.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.72549019607843135" green="0.23529411764705882" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3d-ih-HP3">
@@ -171,7 +183,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.41176470590000003" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
@@ -228,7 +240,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.41176470590000003" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
@@ -291,7 +303,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.41176470590000003" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
@@ -354,7 +366,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
                                         <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                         <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.41176470590000003" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
@@ -386,7 +398,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.41176470590000003" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
@@ -1731,7 +1743,7 @@
                                 <rect key="frame" x="41" y="62" width="238" height="506"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="71" id="e8G-Wn-xcL" customClass="MessageViewCell" customModule="Weding" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="71" id="e8G-Wn-xcL" customClass="MessageViewCell" customModule="GuestWedding" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="238" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e8G-Wn-xcL" id="Az7-zp-94v">

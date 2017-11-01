@@ -19,6 +19,8 @@
 		9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CEF1FA82CF20081D840 /* SeatViewController.swift */; };
 		9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF11FA82D330081D840 /* ChatViewController.swift */; };
 		9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF31FA82D400081D840 /* DetailChatViewController.swift */; };
+		9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */; };
+		9DCDEE4E1FA976300055FE59 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4D1FA976300055FE59 /* Extension.swift */; };
 		9DF3A52F1FA8667F000FCED2 /* Calibri Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A52E1FA8667F000FCED2 /* Calibri Bold.ttf */; };
 		9DF3A5311FA86689000FCED2 /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */; };
 		9DF3A5331FA86692000FCED2 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A5321FA86692000FCED2 /* Calibri.ttf */; };
@@ -42,6 +44,8 @@
 		9D032CEF1FA82CF20081D840 /* SeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
 		9D032CF11FA82D330081D840 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9D032CF31FA82D400081D840 /* DetailChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
+		9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKNetwork.swift; sourceTree = "<group>"; };
+		9DCDEE4D1FA976300055FE59 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9DF3A52E1FA8667F000FCED2 /* Calibri Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.ttf"; sourceTree = "<group>"; };
 		9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
 		9DF3A5321FA86692000FCED2 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				9D032CEF1FA82CF20081D840 /* SeatViewController.swift */,
 				9D032CF11FA82D330081D840 /* ChatViewController.swift */,
 				9D032CF31FA82D400081D840 /* DetailChatViewController.swift */,
+				9DCDEE4A1FA966D40055FE59 /* Network */,
 				9D032CE41FA81DF40081D840 /* Util */,
 			);
 			path = GuestWedding;
@@ -116,6 +121,7 @@
 		9D032CE41FA81DF40081D840 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9DCDEE4D1FA976300055FE59 /* Extension.swift */,
 				9DF3A52E1FA8667F000FCED2 /* Calibri Bold.ttf */,
 				9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */,
 				9DF3A5321FA86692000FCED2 /* Calibri.ttf */,
@@ -124,6 +130,14 @@
 				9D032CDE1FA81BB10081D840 /* Info.plist */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		9DCDEE4A1FA966D40055FE59 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +280,11 @@
 				9D032CEA1FA827280081D840 /* SiginViewController.swift in Sources */,
 				9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */,
 				9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */,
+				9DCDEE4E1FA976300055FE59 /* Extension.swift in Sources */,
 				9D032CD31FA81BB10081D840 /* AppDelegate.swift in Sources */,
 				9D032CEE1FA82CD90081D840 /* FollowViewController.swift in Sources */,
 				9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */,
+				9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */,
 				9D032CE61FA8206E0081D840 /* BaseViewController.swift in Sources */,
 				9D032CEC1FA8275D0081D840 /* LeftMenuViewController.swift in Sources */,
 			);
