@@ -7,8 +7,9 @@ target 'GuestWedding' do
 
   # Pods for GuestWedding
 pod 'SWRevealViewController'
-pod 'DeviceKit', '~> 1.0'
- 	pod 'SDWebImage', '~> 4.0'
-  	pod 'SwiftLint'
+pod 'DeviceKit', '~> 1.4.0'
+pod 'SDWebImage', '~> 4.1.2'
+pod 'SwiftLint'
+pod 'SwiftyJSON', '~> 3.1.4'
 
 end

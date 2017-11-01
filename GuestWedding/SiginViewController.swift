@@ -21,8 +21,13 @@ class SiginViewController: BaseViewController {
     }
 
     @IBAction func pressedSigin(_ sender: Any) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as? SWRevealViewController {
-            self.present(vc, animated: false, completion: nil)
+        let siginTask = SiginTask(idGuest: 0912345678)
+        requestWith(task: siginTask) { (guest) in
+            if (guest as? Guest) != nil {
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as? SWRevealViewController {
+                    self.present(vc, animated: false, completion: nil)
+                }
+            }
         }
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import SystemConfiguration
+import SwiftyJSON
 
 enum HTTPMethod: String {
     case POST
@@ -27,7 +28,6 @@ class LKNetwork: NSObject {
     static func shared() -> LKNetwork {
         return LKNetwork()
     }
-    private override init() {}
     
     // MARK: Check Internet Acess
     
@@ -67,16 +67,17 @@ class LKNetwork: NSObject {
     
     func requestServer(sucess: @escaping BlockSucess, failure: @escaping BlockFailure) {
         if !isInternetAvailable() {
-            
+            failure("No Internet Access")
             return
         }
+        let url = baseURL + path()
         let params = getParams(params: parameters())
         request?.httpMethod = method().rawValue
         if method() == .POST {
-            request = URLRequest(url: URL(string: path())!)
+            request = URLRequest(url: URL(string: url)!)
             request?.httpBody = params.data(using: .utf8)
         } else {
-            request = URLRequest(url: URL(string: path() + params)!)
+            request = URLRequest(url: URL(string: url + params)!)
         }
         request?.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         setUpTimeOut()
@@ -87,9 +88,13 @@ class LKNetwork: NSObject {
                     failure((error?.localizedDescription)!)
                     return
                 }
-//                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                let json =  self.dataWithResponse(data!)
-                sucess(json)
+                let json = JSON(data: data!)
+                let error = json["ErrCode"].int
+                let error1 = json["RtnCode"].int
+                if error == -1 || error1 == -1 {
+                    failure(json["ErrMsg"].string!)
+                }
+                sucess(self.dataWithResponse(json))
             }
         }
         task.resume()

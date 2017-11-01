@@ -22,9 +22,11 @@
 		9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */; };
 		9DCDEE4E1FA976300055FE59 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4D1FA976300055FE59 /* Extension.swift */; };
 		9DCDEE501FA982360055FE59 /* SiginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4F1FA982360055FE59 /* SiginTask.swift */; };
+		9DCDEE531FA988350055FE59 /* DefineURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE521FA988350055FE59 /* DefineURL.swift */; };
 		9DF3A52F1FA8667F000FCED2 /* Calibri Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A52E1FA8667F000FCED2 /* Calibri Bold.ttf */; };
 		9DF3A5311FA86689000FCED2 /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */; };
 		9DF3A5331FA86692000FCED2 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A5321FA86692000FCED2 /* Calibri.ttf */; };
+		9DFC2E441FA9A7D200059A3D /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC2E431FA9A7D200059A3D /* Guest.swift */; };
 		A020E09C4BAD7A23CE06840E /* Pods_GuestWedding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3D95DFF2837B68A24F4236 /* Pods_GuestWedding.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,9 +50,11 @@
 		9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKNetwork.swift; sourceTree = "<group>"; };
 		9DCDEE4D1FA976300055FE59 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9DCDEE4F1FA982360055FE59 /* SiginTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiginTask.swift; sourceTree = "<group>"; };
+		9DCDEE521FA988350055FE59 /* DefineURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefineURL.swift; sourceTree = "<group>"; };
 		9DF3A52E1FA8667F000FCED2 /* Calibri Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.ttf"; sourceTree = "<group>"; };
 		9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
 		9DF3A5321FA86692000FCED2 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
+		9DFC2E431FA9A7D200059A3D /* Guest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		AA7DD4806FB03F00C6A1FBAC /* Pods-GuestWedding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuestWedding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuestWedding/Pods-GuestWedding.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,15 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				9D032CD21FA81BB10081D840 /* AppDelegate.swift */,
-				9D032CD61FA81BB10081D840 /* Main.storyboard */,
+				9DCDEE521FA988350055FE59 /* DefineURL.swift */,
 				9D032CE51FA8206E0081D840 /* BaseViewController.swift */,
-				9D032CE71FA820E80081D840 /* MainViewController.swift */,
-				9D032CE91FA827280081D840 /* SiginViewController.swift */,
-				9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */,
-				9D032CED1FA82CD90081D840 /* FollowViewController.swift */,
-				9D032CEF1FA82CF20081D840 /* SeatViewController.swift */,
-				9D032CF11FA82D330081D840 /* ChatViewController.swift */,
-				9D032CF31FA82D400081D840 /* DetailChatViewController.swift */,
+				9D032CD61FA81BB10081D840 /* Main.storyboard */,
+				9DCDEE541FA9883C0055FE59 /* Controller */,
+				9DFC2E451FA9A7D600059A3D /* Model */,
 				9DCDEE4A1FA966D40055FE59 /* Network */,
 				9D032CE41FA81DF40081D840 /* Util */,
 			);
@@ -141,6 +141,28 @@
 				9DCDEE4F1FA982360055FE59 /* SiginTask.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		9DCDEE541FA9883C0055FE59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D032CE71FA820E80081D840 /* MainViewController.swift */,
+				9D032CE91FA827280081D840 /* SiginViewController.swift */,
+				9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */,
+				9D032CED1FA82CD90081D840 /* FollowViewController.swift */,
+				9D032CEF1FA82CF20081D840 /* SeatViewController.swift */,
+				9D032CF11FA82D330081D840 /* ChatViewController.swift */,
+				9D032CF31FA82D400081D840 /* DetailChatViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9DFC2E451FA9A7D600059A3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DFC2E431FA9A7D200059A3D /* Guest.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,12 +265,14 @@
 				"${BUILT_PRODUCTS_DIR}/DeviceKit/DeviceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeviceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -294,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCDEE531FA988350055FE59 /* DefineURL.swift in Sources */,
 				9D032CE81FA820E80081D840 /* MainViewController.swift in Sources */,
 				9D032CEA1FA827280081D840 /* SiginViewController.swift in Sources */,
 				9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */,
@@ -305,6 +330,7 @@
 				9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */,
 				9D032CE61FA8206E0081D840 /* BaseViewController.swift in Sources */,
 				9D032CEC1FA8275D0081D840 /* LeftMenuViewController.swift in Sources */,
+				9DFC2E441FA9A7D200059A3D /* Guest.swift in Sources */,
 				9DCDEE501FA982360055FE59 /* SiginTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
