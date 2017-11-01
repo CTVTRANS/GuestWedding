@@ -21,6 +21,7 @@
 		9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF31FA82D400081D840 /* DetailChatViewController.swift */; };
 		9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */; };
 		9DCDEE4E1FA976300055FE59 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4D1FA976300055FE59 /* Extension.swift */; };
+		9DCDEE501FA982360055FE59 /* SiginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4F1FA982360055FE59 /* SiginTask.swift */; };
 		9DF3A52F1FA8667F000FCED2 /* Calibri Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A52E1FA8667F000FCED2 /* Calibri Bold.ttf */; };
 		9DF3A5311FA86689000FCED2 /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */; };
 		9DF3A5331FA86692000FCED2 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF3A5321FA86692000FCED2 /* Calibri.ttf */; };
@@ -36,7 +37,7 @@
 		9D032CD91FA81BB10081D840 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D032CDC1FA81BB10081D840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D032CDE1FA81BB10081D840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D032CE51FA8206E0081D840 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9D032CE51FA8206E0081D840 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		9D032CE71FA820E80081D840 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9D032CE91FA827280081D840 /* SiginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiginViewController.swift; sourceTree = "<group>"; };
 		9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		9D032CF31FA82D400081D840 /* DetailChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
 		9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKNetwork.swift; sourceTree = "<group>"; };
 		9DCDEE4D1FA976300055FE59 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9DCDEE4F1FA982360055FE59 /* SiginTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiginTask.swift; sourceTree = "<group>"; };
 		9DF3A52E1FA8667F000FCED2 /* Calibri Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.ttf"; sourceTree = "<group>"; };
 		9DF3A5301FA86689000FCED2 /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
 		9DF3A5321FA86692000FCED2 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */,
+				9DCDEE4F1FA982360055FE59 /* SiginTask.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				9D032CCD1FA81BB00081D840 /* Resources */,
 				89369AD5D9CA527202CDED56 /* [CP] Embed Pods Frameworks */,
 				31373B58C9D8C67E4B93F5B4 /* [CP] Copy Pods Resources */,
+				9DCDEE511FA984470055FE59 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -251,6 +255,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuestWedding/Pods-GuestWedding-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9DCDEE511FA984470055FE59 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		C32AA82527198815433A60F5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +305,7 @@
 				9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */,
 				9D032CE61FA8206E0081D840 /* BaseViewController.swift in Sources */,
 				9D032CEC1FA8275D0081D840 /* LeftMenuViewController.swift in Sources */,
+				9DCDEE501FA982360055FE59 /* SiginTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

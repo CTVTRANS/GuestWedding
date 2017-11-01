@@ -23,7 +23,6 @@ class LeftMenuCell: UITableViewCell {
     }
 }
 
-
 class LeftMenuViewController: BaseViewController {
 
     @IBOutlet weak var table: UITableView!
@@ -47,4 +46,3 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
 }
-

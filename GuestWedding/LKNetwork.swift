@@ -20,11 +20,11 @@ typealias BlockProgess = (Float) -> Void
 
 class LKNetwork: NSObject {
     
-    var request : URLRequest?
+    var request: URLRequest?
     var session = URLSession.shared
     let timeOut = 30.0
     
-    static func shared() ->  LKNetwork {
+    static func shared() -> LKNetwork {
         return LKNetwork()
     }
     private override init() {}
@@ -50,7 +50,7 @@ class LKNetwork: NSObject {
         return isReachable && !needsConnection
     }
     
-    func getParams(params:[String: Any]) -> String {
+    func getParams(params: [String: Any]) -> String {
         var data = [String]()
         for(key, value) in params {
             data.append(key + "=\(value)")
@@ -73,15 +73,15 @@ class LKNetwork: NSObject {
         let params = getParams(params: parameters())
         request?.httpMethod = method().rawValue
         if method() == .POST {
-            request = URLRequest(url: URL(string:path())!)
+            request = URLRequest(url: URL(string: path())!)
             request?.httpBody = params.data(using: .utf8)
         } else {
-            request = URLRequest(url: URL(string:path() + params)!)
+            request = URLRequest(url: URL(string: path() + params)!)
         }
         request?.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         setUpTimeOut()
         
-        let task = session.dataTask(with: request!) { (data, urlResponse, error) in
+        let task = session.dataTask(with: request!) { (data, _, error) in
             DispatchQueue.main.async {
                 if error != nil {
                     failure((error?.localizedDescription)!)
@@ -95,7 +95,6 @@ class LKNetwork: NSObject {
         task.resume()
     }
     
-
     // MARK: HTTP Method
     
     func method() -> HTTPMethod {

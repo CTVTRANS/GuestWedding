@@ -16,10 +16,9 @@ class OutlineLabel: UILabel {
     override func drawText(in rect: CGRect) {
         
         let strokeTextAttributes = [
-            NSStrokeColorAttributeName : outlineColor,
-            NSStrokeWidthAttributeName : -1 * outlineWidth,
-//            NSForegroundColorAttributeName: UIColor.black
-            ] as [String : Any]
+            NSStrokeColorAttributeName: outlineColor,
+            NSStrokeWidthAttributeName: -1 * outlineWidth
+            ] as [String: Any]
         
         self.attributedText = NSAttributedString(string: self.text ?? "", attributes: strokeTextAttributes)
         super.drawText(in: rect)
