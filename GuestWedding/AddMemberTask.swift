@@ -20,7 +20,7 @@ class AddMemberTask: LKNetwork {
     }
     
     override func path() -> String {
-        return followMemberURL + "id=" + Guest.shared().idGuest!
+        return followMemberURL + "id=" + Guest.shared.idGuest!
     }
     
     override func parameters() -> [String: Any] {

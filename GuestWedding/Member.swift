@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-struct Member {
+class Member {
 
     var manName: String?
     var nameWoman: String?
@@ -29,6 +29,6 @@ struct Member {
         linkweb = "http://www.freewed.com.tw/app/LOVE.aspx?ACCT=ann730204"
     }
     
-    static var shared = Member()
+    static let shared = Member()
     init() {}
 }

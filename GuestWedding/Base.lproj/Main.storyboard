@@ -652,13 +652,21 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  貼心叮嚀  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7y-1W-DSm">
                                 <rect key="frame" x="45" y="68" width="78.5" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="Af0-4R-O4H"/>
+                                    <constraint firstAttribute="height" constant="25" id="Af0-4R-O4H">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustConstantToRealIPhoneSize" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="16"/>
                                 <color key="textColor" red="0.97254901960784312" green="0.49803921568627452" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-T4-pRw">
@@ -679,7 +687,14 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedOpenWeb:" destination="xGE-s4-abn" eventType="touchUpInside" id="zrt-rm-ruD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="397-WU-Rp2">
                                 <rect key="frame" x="137" y="296" width="46" height="30"/>
@@ -688,7 +703,14 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressedAcept:" destination="xGE-s4-abn" eventType="touchUpInside" id="Nja-go-eP4"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconApp" translatesAutoresizingMaskIntoConstraints="NO" id="Hge-zH-VpF">
                                 <rect key="frame" x="93.5" y="376" width="133" height="133"/>
@@ -741,6 +763,11 @@
                             </constraint>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aceptButton" destination="397-WU-Rp2" id="tqo-77-rYU"/>
+                        <outlet property="openLinkWeb" destination="itc-aI-S7J" id="Ldh-bp-XPX"/>
+                        <outlet property="titleLabel" destination="K7y-1W-DSm" id="IPm-qb-doh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HG9-tp-5Az" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -830,7 +857,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2J-ck-eiZ">
-                                        <rect key="frame" x="57" y="83" width="165" height="23"/>
+                                        <rect key="frame" x="57" y="83.5" width="165" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="35D-nU-Yz3">
                                                 <userDefinedRuntimeAttributes>
@@ -849,7 +876,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-lT-9Gc">
-                                        <rect key="frame" x="57" y="114" width="165" height="23"/>
+                                        <rect key="frame" x="57" y="114.5" width="165" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="6vt-Q3-Xd3">
                                                 <userDefinedRuntimeAttributes>
@@ -886,7 +913,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vue-ae-HfU">
-                                        <rect key="frame" x="162" y="162" width="60" height="29"/>
+                                        <rect key="frame" x="162" y="162.5" width="60" height="29"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="siginButton" translatesAutoresizingMaskIntoConstraints="NO" id="nlE-Go-6Wx">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="29"/>
@@ -1456,6 +1483,9 @@
                         <barButtonItem key="leftBarButtonItem" image="ic_leftButton" id="Dyw-IN-V2C"/>
                         <barButtonItem key="rightBarButtonItem" image="ic_rightButton" id="FGl-0C-KBg"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameMember" destination="Qlt-jz-w1K" id="H2m-Vg-f5A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIV-u8-mU1" sceneMemberID="firstResponder"/>
             </objects>
