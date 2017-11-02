@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D00948A1FAABB5500A64CA9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0094891FAABB5500A64CA9 /* Message.swift */; };
+		9D00948C1FAAD09800A64CA9 /* BaseDailog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D00948B1FAAD09800A64CA9 /* BaseDailog.swift */; };
+		9D00948F1FAAD11F00A64CA9 /* SetupProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D00948E1FAAD11F00A64CA9 /* SetupProfile.swift */; };
+		9D0094911FAAD13300A64CA9 /* SetupProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0094901FAAD13300A64CA9 /* SetupProfile.xib */; };
 		9D032CD31FA81BB10081D840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CD21FA81BB10081D840 /* AppDelegate.swift */; };
 		9D032CD81FA81BB10081D840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D032CD61FA81BB10081D840 /* Main.storyboard */; };
 		9D032CDA1FA81BB10081D840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D032CD91FA81BB10081D840 /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 /* Begin PBXFileReference section */
 		3A3D95DFF2837B68A24F4236 /* Pods_GuestWedding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuestWedding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA9B141112A98D588C6DD2B /* Pods-GuestWedding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuestWedding.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuestWedding/Pods-GuestWedding.release.xcconfig"; sourceTree = "<group>"; };
+		9D0094891FAABB5500A64CA9 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9D00948B1FAAD09800A64CA9 /* BaseDailog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDailog.swift; sourceTree = "<group>"; };
+		9D00948E1FAAD11F00A64CA9 /* SetupProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupProfile.swift; sourceTree = "<group>"; };
+		9D0094901FAAD13300A64CA9 /* SetupProfile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupProfile.xib; sourceTree = "<group>"; };
 		9D032CCF1FA81BB10081D840 /* GuestWedding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuestWedding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D032CD21FA81BB10081D840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D032CD71FA81BB10081D840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +99,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9D00948D1FAAD09E00A64CA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D00948B1FAAD09800A64CA9 /* BaseDailog.swift */,
+				9D00948E1FAAD11F00A64CA9 /* SetupProfile.swift */,
+				9D0094901FAAD13300A64CA9 /* SetupProfile.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		9D032CC61FA81BB00081D840 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +135,7 @@
 				9D032CE51FA8206E0081D840 /* BaseViewController.swift */,
 				9D032CD61FA81BB10081D840 /* Main.storyboard */,
 				9DCDEE541FA9883C0055FE59 /* Controller */,
+				9D00948D1FAAD09E00A64CA9 /* View */,
 				9DFC2E451FA9A7D600059A3D /* Model */,
 				9DCDEE4A1FA966D40055FE59 /* Network */,
 				9D032CE41FA81DF40081D840 /* Util */,
@@ -167,6 +186,7 @@
 			children = (
 				9DFC2E431FA9A7D200059A3D /* Guest.swift */,
 				9DFC2E461FA9B6BC00059A3D /* Member.swift */,
+				9D0094891FAABB5500A64CA9 /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -239,6 +259,7 @@
 				9D032CDA1FA81BB10081D840 /* Assets.xcassets in Resources */,
 				9D032CD81FA81BB10081D840 /* Main.storyboard in Resources */,
 				9DF3A5311FA86689000FCED2 /* Calibri Italic.ttf in Resources */,
+				9D0094911FAAD13300A64CA9 /* SetupProfile.xib in Resources */,
 				9DF3A52F1FA8667F000FCED2 /* Calibri Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +348,7 @@
 				9DCDEE531FA988350055FE59 /* DefineURL.swift in Sources */,
 				9D032CE81FA820E80081D840 /* MainViewController.swift in Sources */,
 				9DFC2E4B1FA9B88E00059A3D /* AddMemberTask.swift in Sources */,
+				9D00948A1FAABB5500A64CA9 /* Message.swift in Sources */,
 				9D032CEA1FA827280081D840 /* SiginViewController.swift in Sources */,
 				9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */,
 				9DFC2E471FA9B6BC00059A3D /* Member.swift in Sources */,
@@ -338,7 +360,9 @@
 				9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */,
 				9D032CE61FA8206E0081D840 /* BaseViewController.swift in Sources */,
 				9D032CEC1FA8275D0081D840 /* LeftMenuViewController.swift in Sources */,
+				9D00948F1FAAD11F00A64CA9 /* SetupProfile.swift in Sources */,
 				9DFC2E441FA9A7D200059A3D /* Guest.swift in Sources */,
+				9D00948C1FAAD09800A64CA9 /* BaseDailog.swift in Sources */,
 				9DCDEE501FA982360055FE59 /* SiginTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
