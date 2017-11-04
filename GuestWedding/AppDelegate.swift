@@ -15,16 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        registerForPushNotifications()
+        
         UINavigationBar.appearance().setBackgroundImage(#imageLiteral(resourceName: "navigationBar"), for: .default)
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.rgb(105, 85, 80)]
         
+        registerForPushNotifications()
         if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
             let aps = notification["aps"] as? [String: AnyObject]
             print(aps!)
         }
-
         return true
     }
     

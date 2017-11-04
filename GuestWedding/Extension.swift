@@ -53,6 +53,31 @@ extension UIColor {
     }
 }
 
+extension UITextView {
+    var adjustFontToRealIPhoneSize: Bool {
+        set {
+            if newValue {
+                let currentFont = self.font
+                var sizeScale: CGFloat = 1
+                let device = Device()
+                if device == .simulator(.iPhone7) || device == .simulator(.iPhone6) || device == .iPhone6
+                    || device == .iPhone6s || device == .iPhone7 || device == .simulator(.iPhone8)
+                    || device == .iPhone8 {
+                    sizeScale = 1.2
+                } else if device == .simulator(.iPhone6Plus) || device == .simulator(.iPhone7Plus)
+                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus)
+                    || device == .iPhone8Plus {
+                    sizeScale = 1.3
+                }
+                self.font = currentFont?.withSize((currentFont?.pointSize)! * sizeScale)
+            }
+        }
+        get {
+            return false
+        }
+    }
+}
+
 extension UILabel {
     var adjustFontToRealIPhoneSize: Bool {
         set {

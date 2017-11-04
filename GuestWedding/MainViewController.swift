@@ -25,12 +25,12 @@ class MainViewController: BaseViewController {
         setupNavigation()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_rightButton"), style: .plain, target: nil, action: nil)
         member = Member(json: JSON.null)
-        Member.shared.linkweb = member?.linkweb
+       
     }
     
     @IBAction func pressedOpenWeb(_ sender: Any) {
-        let url = URL(string: (member?.linkweb)!)
-        UIApplication.shared.openURL(url!)
+//        let url = URL(string: (member?.linkweb)!)
+//        UIApplication.shared.openURL(url!)
     }
     
     @IBAction func pressedMessage(_ sender: Any) {

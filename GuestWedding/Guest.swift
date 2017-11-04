@@ -27,6 +27,6 @@ struct Guest {
         token = json["token"].string
     }
     
-    static let shared = Guest()
+    static var shared = Guest()
     private init() {}
 }

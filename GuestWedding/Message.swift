@@ -11,13 +11,18 @@ import SwiftyJSON
 
 struct Message {
 
-    var messageOwner: String?
+    var isMyOwner: Bool!
     var messageBoby: String?
     var time: String?
     
     init(json: JSON) {
-        messageOwner = json[""].string
-        messageBoby = json[""].string
-        time = json[""].string
+        let objectSend = json["FROM_USER_GROUP"].string
+        if objectSend == "W0" {
+            isMyOwner = true
+        } else {
+            isMyOwner = false
+        }
+        messageBoby = json["MESSAGE_CONTENT"].string
+        time = json["MESSAGE_TIME"].string
     }
 }
