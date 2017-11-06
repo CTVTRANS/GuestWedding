@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().setBackgroundImage(#imageLiteral(resourceName: "navigationBar"), for: .default)
         UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.rgb(105, 85, 80)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.rgb(105, 85, 80)]
         
         registerForPushNotifications()
         if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
@@ -51,7 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UNUserNotificationCenter.current().getNotificationSettings { (settings) in
                  print("Notification settings: \(settings)")
                 guard settings.authorizationStatus == .authorized else {return}
-                UIApplication.shared.registerForRemoteNotifications()
+                DispatchQueue.main.async {
+                     UIApplication.shared.registerForRemoteNotifications()
+                }
             }
         } else {
            

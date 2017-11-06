@@ -48,12 +48,13 @@ extension UIAlertController {
 }
 
 extension UIColor {
-    static func rgb(_ red: Float, _ blue: Float, _ green: Float) -> UIColor {
-        return UIColor(colorLiteralRed: red/255.0, green: blue/255.0, blue: green/255.0, alpha: 1.0)
+    static func rgb(_ red: CGFloat, _ blue: CGFloat, _ green: CGFloat) -> UIColor {
+        return UIColor(red: red/255.0, green: blue/255.0, blue: green/255.0, alpha: 1.0)
     }
 }
 
 extension UITextView {
+    @IBInspectable
     var adjustFontToRealIPhoneSize: Bool {
         set {
             if newValue {
@@ -79,6 +80,7 @@ extension UITextView {
 }
 
 extension UILabel {
+    @IBInspectable
     var adjustFontToRealIPhoneSize: Bool {
         set {
             if newValue {
@@ -104,6 +106,7 @@ extension UILabel {
 }
 
 extension UITextField {
+    @IBInspectable
     var adjustFontToRealIPhoneSize: Bool {
         set {
             if newValue {
@@ -129,6 +132,7 @@ extension UITextField {
 }
 
 extension NSLayoutConstraint {
+    @IBInspectable
     var adjustConstantToRealIPhoneSize: Bool {
         set {
             if newValue {
@@ -154,6 +158,7 @@ extension NSLayoutConstraint {
 }
 
 extension UIButton {
+    @IBInspectable
     var adjustFontToRealIPhoneSize: Bool {
         set {
             if newValue {

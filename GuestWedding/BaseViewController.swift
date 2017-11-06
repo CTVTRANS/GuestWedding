@@ -32,7 +32,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func popToRootNavigation() {
+    @objc func popToRootNavigation() {
 //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController
 //        let navigationController: UINavigationController = UINavigationController.init(rootViewController: vc!)
 //        swVC?.pushFrontViewController(navigationController, animated: true)

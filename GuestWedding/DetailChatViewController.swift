@@ -34,7 +34,7 @@ class DetailChatViewController: BaseViewController {
         popView = SetupProfile.instance() as? SetupProfile
     }
     
-    func popViewController() {
+    @objc func popViewController() {
         navigationController?.popViewController(animated: false)
     }
     
@@ -90,7 +90,7 @@ class DetailChatViewController: BaseViewController {
         }
     }
     
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
         view.removeGestureRecognizer(tap!)
     }
@@ -121,8 +121,8 @@ class MyCellMessage: UITableViewCell {
         let timeHour = timeDate?[1]
         let index = timeHour?.index((timeHour?.startIndex)!, offsetBy: 4)
         
-        let timeMessage = String(month) + "/" + String(date) + " " + (timeHour?.substring(to: index!))!
-        time.text = timeMessage
+        let timeMessage = String(month) + "/" + String(date)
+        time.text = timeMessage + " " + String((timeHour?[...index!])!)
     }
 }
 
@@ -140,8 +140,8 @@ class MemberCellMessage: UITableViewCell {
         let timeHour = timeDate?[1]
         let index = timeHour?.index((timeHour?.startIndex)!, offsetBy: 4)
         
-        let timeMessage = String(month) + "/" + String(date) + " " + (timeHour?.substring(to: index!))!
-        time.text = timeMessage
+        let timeMessage = String(month) + "/" + String(date)
+        time.text = timeMessage + " " + String((timeHour?[...index!])!)
     }
 }
 
@@ -170,6 +170,10 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             return memberCellMsg(indexPath: indexPath)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 
