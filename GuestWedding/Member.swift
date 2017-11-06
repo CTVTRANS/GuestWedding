@@ -17,11 +17,11 @@ struct Member {
     var nameWoman: String?
     var dateMan: String?
     var dateWoman: String?
-    var numberGuestMan: String?
-    var numberGuestWoman: String?
+    var numberGuestMan: Int?
+    var numberGuestWoman: Int?
     var counterManDate: String?
     var counterWomanDate: String?
-    var linkweb: String?
+    var linkweb: String = ""
     
     init(json: JSON) {
         idMember = json["ACCOUNT"].string
@@ -30,11 +30,11 @@ struct Member {
         nameWoman = json["WomanNM"].string
         dateMan = json["ENGDTD"].string
         dateWoman = json["COUPLEENGDTD"].string
-        numberGuestMan = json["VIPLETTERCOUNT1"].string
-        numberGuestWoman = json["VIPLETTERCOUNT2"].string
+        numberGuestMan = json["VIPLETTERCOUNT1"].int
+        numberGuestWoman = json["VIPLETTERCOUNT2"].int
         counterManDate = json["ENGDTDCounter"].string
         counterWomanDate = json["COUPLEENGDTDCounter"].string
-        linkweb = json["MEMBER_URL"].string
+        linkweb = json["MEMBER_URL"].string!
     }
     init() {}
 }

@@ -10,7 +10,6 @@ import UIKit
 import SwiftyJSON
 
 struct Guest {
-
     var idGuest: String?
     var account: String?
     var usename: String?
@@ -26,7 +25,6 @@ struct Guest {
         email = json["EMAIL"].string
         token = json["token"].string
     }
-    
     static var shared = Guest()
     private init() {}
 }

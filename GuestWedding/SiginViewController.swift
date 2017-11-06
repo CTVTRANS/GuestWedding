@@ -19,6 +19,26 @@ class SiginViewController: BaseViewController {
         userName.layer.borderColor = UIColor.rgb(233, 130, 139).cgColor
         password.layer.borderColor = UIColor.rgb(233, 130, 139).cgColor
     }
+    
+    func getMessage() {
+        let notice = NoticeMember.getNotice()
+        let member = Contants.shared.currentMember!
+        let getMessageTask = GetMessageTask(idGuest: Guest.shared.idGuest!, userID: (member.idMember)!)
+        self.requestWith(task: getMessageTask) { (data) in
+            if let arrayMessage = data as? [Message] {
+                let oldNumberMessage: Int = notice.numberMessage!
+                Contants.shared.numberNewMessage = arrayMessage.count - oldNumberMessage
+                Contants.shared.totalMessage = arrayMessage.count
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as? SWRevealViewController {
+                    self.present(vc, animated: false, completion: nil)
+                }
+            }
+        }
+        let newNumberSeat = member.numberGuestMan! + member.numberGuestWoman!
+        let oldNumberSeat = notice.numberSeat!
+        Contants.shared.numberNewSeat = newNumberSeat - oldNumberSeat
+        Contants.shared.totalSeat = newNumberSeat
+    }
 
     @IBAction func pressedSigin(_ sender: Any) {
         let siginTask = SiginTask(idGuest: "0912345678")
@@ -26,6 +46,12 @@ class SiginViewController: BaseViewController {
             if let data = data as? (Guest, [Member]) {
                 let guest = data.0
                 Guest.shared = guest
+                Contants.shared.currentMember = data.1.first
+                if  Contants.shared.currentMember != nil {
+                    self.getMessage()
+                    return
+                }
+                
                 if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as? SWRevealViewController {
                     self.present(vc, animated: false, completion: nil)
                 }
