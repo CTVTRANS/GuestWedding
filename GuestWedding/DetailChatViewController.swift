@@ -19,6 +19,7 @@ class DetailChatViewController: BaseViewController {
     
     var popView: SetupProfile!
     let picker = UIImagePickerController()
+    var page: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class DetailChatViewController: BaseViewController {
     }
     
     func getMessage() {
-        let getMessageTask = GetMessageTask(idGuest: Guest.shared.idGuest!, userID: (member?.idMember)!)
+        let getMessageTask = GetMessageTask( userID: (member?.idMember)!, page: page)
         requestWith(task: getMessageTask) { (data) in
             if let arrayMessage = data as? [Message] {
                 self.listMessage = arrayMessage
@@ -52,7 +53,7 @@ class DetailChatViewController: BaseViewController {
     func scrollLastMessage() {
         DispatchQueue.main.async {
             let contensizeHight = self.table.contentSize.height
-            let frameHight = self.table.frame.size.height
+            let frameHight = self.table.bounds.size.height
             if contensizeHight > frameHight {
                 let offset = CGPoint(x: 0, y: contensizeHight - frameHight)
                 self.table.setContentOffset(offset, animated: false)
@@ -103,7 +104,13 @@ class DetailChatViewController: BaseViewController {
     }
     
     @IBAction func pressedSendMsg(_ sender: Any) {
-        
+        if textMessage.text != nil {
+            let sendMessageTask = SendMessageTask(msg: textMessage.text!)
+            requestWith(task: sendMessageTask, success: { (_) in
+                self.textMessage.text = ""
+                self.getMessage()
+            })
+        }
     }
 }
 

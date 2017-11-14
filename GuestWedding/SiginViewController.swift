@@ -23,7 +23,7 @@ class SiginViewController: BaseViewController {
     func getMessage() {
         let notice = NoticeMember.getNotice()
         let member = Contants.shared.currentMember!
-        let getMessageTask = GetMessageTask(idGuest: Guest.shared.idGuest!, userID: (member.idMember)!)
+        let getMessageTask = GetMessageTask(userID: (member.idMember)!, page: 0)
         self.requestWith(task: getMessageTask) { (data) in
             if let arrayMessage = data as? [Message] {
                 let oldNumberMessage: Int = notice.numberMessage!

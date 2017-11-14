@@ -66,22 +66,30 @@ class LKNetwork: NSObject {
     }
     
     // MARK: Call Request
-    
     func requestServer(sucess: @escaping BlockSucess, failure: @escaping BlockFailure) {
         if !isInternetAvailable() {
             failure("No Internet Access")
             return
         }
-        let url = baseURL + path()
         let params = getParams(params: parameters())
-        request?.httpMethod = method().rawValue
+        let url = baseURL + path()
         if method() == .POST {
             request = URLRequest(url: URL(string: url)!)
             request?.httpBody = params.data(using: .utf8)
         } else {
             request = URLRequest(url: URL(string: url + params)!)
         }
+        request?.httpMethod = method().rawValue
         request?.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request?.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Accept")
+//        request?.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//        do {
+//            request.HTTPBody = try JSONSerialization.dataWithJSONObject(parameters(), options: [])
+//         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//         request.addValue("application/json", forHTTPHeaderField: "Accept")
+//         } catch {
+//         print(error)
+//         }
         setUpTimeOut()
         
         let task = session.dataTask(with: request!) { (data, _, error) in

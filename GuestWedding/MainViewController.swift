@@ -47,9 +47,6 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         setupNavigation()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_rightButton"), style: .plain, target: self, action: nil)
-        member = Contants.shared.currentMember
-        setupUI()
-        setupNotice()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadNumberNotification(notification:)), name: NSNotification.Name(rawValue: "refreshNotification"), object: nil)
     }
     
@@ -57,6 +54,9 @@ class MainViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        member = Contants.shared.currentMember
+        setupUI()
+        setupNotice()
     }
     
     func setupUI() {
@@ -110,7 +110,8 @@ class MainViewController: BaseViewController {
         Contants.shared.numberNewMessage = 0
         isNewMessage = false
         NoticeMember.saveNotice(noice: notice)
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as? DetailChatViewController {
+            vc.member = Contants.shared.currentMember
             navigationController?.pushViewController(vc, animated: false)
         }
     }

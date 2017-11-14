@@ -13,6 +13,7 @@ let baseURL = "http://www.freewed.com.tw"
 let siginURL = "/api/GetGuestInfo.aspx?"
 let followMemberURL = "/api/UpdateData.aspx?"
 let getMessageURL = "/api/GetGuestMemberHistoryMessage.aspx?"
+let sendMessageURL = "/api/UpdateData.aspx?"
 
 class DefineURL: NSObject {
 

@@ -17,6 +17,15 @@ class FollowViewController: BaseViewController {
         setupNavigation()
     }
     
+    @IBAction func pressedFlow(_ sender: Any) {
+        if nameMember.text != nil {
+            let followMember = AddMemberTask(actionTag: "GuestAddMemberTrace", member: nameMember.text!)
+            requestWith(task: followMember, success: { (_) in
+                
+            })
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

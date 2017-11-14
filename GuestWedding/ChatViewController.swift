@@ -52,7 +52,7 @@ class MemberCell: UITableViewCell {
     
     func binData(member: Member) {
         nameMember.text = member.nameMember
-        let getNewestMessage = GetMessageTask(idGuest: Guest.shared.idGuest!, userID: member.idMember!)
+        let getNewestMessage = GetMessageTask(userID: member.idMember!, page: 0)
         getNewestMessage.requestServer(sucess: { (data) in
             if let listMessage = data as? [Message] {
                 if listMessage.last != nil {

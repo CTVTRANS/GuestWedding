@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,9 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 guard granted else {return}
                 self.getNotificationSettings()
             }
-        } else {
-            UIApplication.shared.registerUserNotificationSettings(.init(types: [.alert, .sound, .badge], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
+        } else if #available(iOS 9, *) {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        } else if #available(iOS 8, *) {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
         }
     }
     

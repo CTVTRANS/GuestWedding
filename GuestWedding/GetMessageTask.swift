@@ -12,11 +12,12 @@ import SwiftyJSON
 class GetMessageTask: LKNetwork {
     
     var userID: String!
-    var idGuest: String!
+    var page: Int!
+    var limit = 50
     
-    init(idGuest: String, userID: String) {
-        self.idGuest = idGuest
+    init( userID: String, page: Int) {
         self.userID = userID
+        self.page = page
     }
 
     override func path() -> String {
@@ -28,7 +29,7 @@ class GetMessageTask: LKNetwork {
     }
     
     override func parameters() -> [String: Any] {
-        return ["id": idGuest, "user_id": userID]
+        return ["id": Guest.shared.idGuest!, "user_id": userID, "pno": page, "pnum": limit]
     }
     
     override func dataWithResponse(_ response: Any) -> Any {
