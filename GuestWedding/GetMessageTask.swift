@@ -13,7 +13,7 @@ class GetMessageTask: LKNetwork {
     
     var userID: String!
     var page: Int!
-    var limit = 50
+    var limit = 20
     
     init( userID: String, page: Int) {
         self.userID = userID

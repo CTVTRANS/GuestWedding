@@ -99,9 +99,9 @@ class LKNetwork: NSObject {
                     return
                 }
                 let json = JSON(data: data!)
-                let error = json["ErrCode"].int
-                let error1 = json["RtnCode"].int
-                if error == -1 || error1 == -1 {
+                let error = json["ErrCode"].string
+                let error1 = json["RtnCode"].string
+                if error == "-1" || error1 == "-1" {
                     failure(json["ErrMsg"].string!)
                 }
                 sucess(self.dataWithResponse(json))

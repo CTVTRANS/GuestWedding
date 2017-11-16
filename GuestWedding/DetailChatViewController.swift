@@ -20,9 +20,14 @@ class DetailChatViewController: BaseViewController {
     var popView: SetupProfile!
     let picker = UIImagePickerController()
     var page: Int = 1
+    var isLoading = false
+    var isMoreData = true
+    var isScrollTop = false
+    var firstGoToView = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        showActivity(inView: self.view)
         table.estimatedRowHeight = 140
         setupNavigation()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: #selector(popViewController))
@@ -43,20 +48,34 @@ class DetailChatViewController: BaseViewController {
         let getMessageTask = GetMessageTask( userID: (member?.idMember)!, page: page)
         requestWith(task: getMessageTask) { (data) in
             if let arrayMessage = data as? [Message] {
-                self.listMessage = arrayMessage
+                self.isLoading = false
+                if arrayMessage.count == 0 {
+                    self.isMoreData = false
+                }
+                self.listMessage += arrayMessage
                 self.table.reloadData()
-                self.scrollLastMessage()
+                if self.isScrollTop {
+                    let index = IndexPath(row: arrayMessage.count, section: 0)
+                    self.table.scrollToRow(at: index, at: .top, animated: false)
+                    self.isScrollTop = false
+                } else {
+                    if self.firstGoToView {
+                        self.firstGoToView = false
+                        self.scrollLastMessage(animated: false)
+                    } else {
+                        self.scrollLastMessage(animated: true)
+                    }
+                }
             }
         }
     }
     
-    func scrollLastMessage() {
+    func scrollLastMessage(animated: Bool) {
         DispatchQueue.main.async {
-            let contensizeHight = self.table.contentSize.height
-            let frameHight = self.table.bounds.size.height
-            if contensizeHight > frameHight {
-                let offset = CGPoint(x: 0, y: contensizeHight - frameHight)
-                self.table.setContentOffset(offset, animated: false)
+            if self.listMessage.count > 0 {
+                let index = IndexPath(row: self.listMessage.count - 1, section: 0)
+                self.table.scrollToRow(at: index, at: .bottom, animated: animated)
+                self.stopActivityIndicator()
             }
         }
     }
@@ -86,7 +105,7 @@ class DetailChatViewController: BaseViewController {
                            animations: { self.view.layoutIfNeeded() },
                            completion: nil)
             DispatchQueue.main.async(execute: {
-                self.scrollLastMessage()
+//                self.scrollLastMessage()
             })
         }
     }
@@ -107,7 +126,11 @@ class DetailChatViewController: BaseViewController {
         if textMessage.text != nil {
             let sendMessageTask = SendMessageTask(msg: textMessage.text!)
             requestWith(task: sendMessageTask, success: { (_) in
+                self.isMoreData = true
+                self.isScrollTop = false
                 self.textMessage.text = ""
+                self.listMessage.removeAll()
+                self.page = 1
                 self.getMessage()
             })
         }
@@ -158,29 +181,40 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
         return listMessage.count
     }
     
-    func myCellMsg(indexPath: IndexPath) -> MyCellMessage {
+    func myCellMsg(indexPath: IndexPath, myMessage: Message) -> MyCellMessage {
         let cell = table.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? MyCellMessage
-        cell?.binData(message: listMessage[indexPath.row])
+        cell?.binData(message: myMessage)
         return cell!
     }
     
-    func memberCellMsg(indexPath: IndexPath) -> MemberCellMessage {
+    func memberCellMsg(indexPath: IndexPath, memBerMessage: Message) -> MemberCellMessage {
         let cell = table.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath) as? MemberCellMessage
-        cell?.binData(message: listMessage[indexPath.row])
+        cell?.binData(message: memBerMessage)
         return cell!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = listMessage[indexPath.row]
+        let numberMessage = listMessage.count - 1
+        let message = listMessage[numberMessage - indexPath.row]
         if message.isMyOwner {
-           return myCellMsg(indexPath: indexPath)
+           return myCellMsg(indexPath: indexPath, myMessage: message)
         } else {
-            return memberCellMsg(indexPath: indexPath)
+            return memberCellMsg(indexPath: indexPath, memBerMessage: message)
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let isTop = table.contentOffset.y <= 5 ? true : false
+        if isTop && isMoreData && !isLoading && !scrollView.isDragging {
+            page += 1
+            isLoading = true
+            isScrollTop = true
+            getMessage()
+        }
     }
 }
 
