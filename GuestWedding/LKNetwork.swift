@@ -22,6 +22,7 @@ typealias BlockProgess = (Float) -> Void
 class LKNetwork: NSObject {
     
     var request: URLRequest?
+//    var mutableRequest: MutableURLRequest?
     var session = URLSession.shared
     let timeOut = 30.0
     
@@ -82,14 +83,6 @@ class LKNetwork: NSObject {
         request?.httpMethod = method().rawValue
         request?.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request?.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Accept")
-//        request?.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//        do {
-//            request.HTTPBody = try JSONSerialization.dataWithJSONObject(parameters(), options: [])
-//         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//         request.addValue("application/json", forHTTPHeaderField: "Accept")
-//         } catch {
-//         print(error)
-//         }
         setUpTimeOut()
         
         let task = session.dataTask(with: request!) { (data, _, error) in
@@ -104,10 +97,78 @@ class LKNetwork: NSObject {
                 if error == "-1" || error1 == "-1" {
                     failure(json["ErrMsg"].string!)
                 }
+                
                 sucess(self.dataWithResponse(json))
             }
         }
         task.resume()
+    }
+    
+    func upLoadData(sucess: @escaping BlockSucess, failure: @escaping BlockFailure) {
+        if !isInternetAvailable() {
+            failure("No Internet Access")
+            return
+        }
+        let imageData = dataUpLoad()
+        let url = baseURL + path()
+        let fileName = nameFile()
+        let params = parameters()
+        let patkKeyFile = name()
+        
+        request = URLRequest(url: URL(string: url)!)
+        request?.httpMethod = "POST"
+        let boundary = generateBoundaryString()
+        request?.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request?.httpBody = createBodyWithParameters(parameters: params,
+                                                     filePathKey: patkKeyFile,
+                                                     imageDataKey: imageData! as NSData,
+                                                     filename: fileName,
+                                                     boundary: boundary) as Data
+        setUpTimeOut()
+        let task = session.dataTask(with: request!) { (data, _, error) in
+            DispatchQueue.main.async {
+                if error != nil {
+                    failure((error?.localizedDescription)!)
+                    return
+                }
+                let json = JSON(data: data!)
+                debugPrint(json)
+                let error = json["ErrCode"].string
+                let error1 = json["RtnCode"].string
+                if error == "-1" || error1 == "-1" {
+                    failure(json["ErrMsg"].string!)
+                }
+                sucess(self.dataWithResponse(json))
+            }
+        }
+        task.resume()
+    }
+    
+    func createBodyWithParameters(parameters: [String: Any]?,
+                                  filePathKey: String?,
+                                  imageDataKey: NSData,
+                                  filename: String,
+                                  boundary: String) -> NSData {
+        let body = NSMutableData()
+        if parameters != nil {
+            for (key, value) in parameters! {
+                body.appendString("--\(boundary)\r\n")
+                body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.appendString("\(value)\r\n")
+            }
+        }
+        let mimetype = "png/jpg"
+        body.appendString("--\(boundary)\r\n")
+        body.appendString("Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
+        body.appendString("Content-Type: \(mimetype)\r\n\r\n")
+        body.append(imageDataKey as Data)
+        body.appendString("\r\n")
+        body.appendString("--\(boundary)--\r\n")
+        return body
+    }
+    
+    func generateBoundaryString() -> String {
+        return "Boundary-\(NSUUID().uuidString)"
     }
     
     // MARK: HTTP Method
@@ -120,8 +181,12 @@ class LKNetwork: NSObject {
         return ["": ""]
     }
     
-    func parameterUpFile() -> [String: Any] {
-        return ["": ""]
+    func name() -> String {
+        return ""
+    }
+    
+    func nameFile() -> String {
+        return ""
     }
     
     func path() -> String {
@@ -134,5 +199,12 @@ class LKNetwork: NSObject {
     
     func dataWithResponse(_ response: Any) -> Any {
         return response
+    }
+}
+
+extension NSMutableData {
+    func appendString(_ string: String) {
+        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
+        append(data!)
     }
 }

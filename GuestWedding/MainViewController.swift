@@ -128,7 +128,7 @@ class MainViewController: BaseViewController {
     }
     
     @IBAction func pressedQAWeb(_ sender: Any) {
-        
+        UIApplication.shared.openURL(URL(string: "http://www.freewed.com.tw/app/fac.aspx?ACCT=freewed")!)
     }
 
     @IBAction func pressedShowFolow(_ sender: Any) {

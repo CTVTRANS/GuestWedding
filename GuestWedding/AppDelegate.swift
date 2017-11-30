@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        UINavigationBar.appearance().setBackgroundImage(#imageLiteral(resourceName: "navigationBar"), for: .default)
+        application.applicationIconBadgeNumber = 0
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.rgb(105, 85, 80)]
         
@@ -29,8 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        let notificationName = Notification.Name("requestToServer")
+//        NotificationCenter.default.post(name: notificationName, object: nil)
+//        let aps = userInfo["aps"] as? [String: AnyObject]
+//        print(aps!)
+//    }
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         let aps = userInfo["aps"] as? [String: AnyObject]
+        NotificationCenter.default.post(name: Notification.Name("requestToServer"), object: nil)
         print(aps!)
     }
 

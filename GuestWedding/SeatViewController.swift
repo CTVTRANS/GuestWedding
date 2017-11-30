@@ -23,11 +23,12 @@ class SeatViewController: BaseViewController {
     }
     
     @IBAction func pressedOpenWeb(_ sender: Any) {
-//        UIApplication.shared.openURL(URL(string: "")!)
+
     }
     
     @IBAction func pressedAcept(_ sender: Any) {
-        
+        let urlString = Contants.shared.currentMember?.linkweb
+        UIApplication.shared.openURL(URL(string: urlString!)!)
     }
     
     deinit {

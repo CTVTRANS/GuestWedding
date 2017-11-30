@@ -26,16 +26,12 @@ class BaseViewController: UIViewController {
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_leftButton"), style: .plain, target: self.revealViewController(), action: #selector(revealViewController().revealToggle(_:)))
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .done, target: self, action: #selector(popToRootNavigation))
             navigationItem.title = "婚禮助手App"
-            //            self.navigationController?.navigationBar.isTranslucent = false
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
     }
     
     @objc func popToRootNavigation() {
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController
-//        let navigationController: UINavigationController = UINavigationController.init(rootViewController: vc!)
-//        swVC?.pushFrontViewController(navigationController, animated: true)
         navigationController?.popToRootViewController(animated: false)
         
     }
@@ -46,6 +42,14 @@ class BaseViewController: UIViewController {
         }) { (error) in
             self.stopActivityIndicator()
             UIAlertController.showAlertWith(title: "", message: error, in: self)
+        }
+    }
+    
+    func upLoas(task: LKNetwork, success: @escaping BlockSucess) {
+        task.upLoadData(sucess: { (data) in
+            
+        }) { (_) in
+            
         }
     }
     

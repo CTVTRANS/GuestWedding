@@ -27,7 +27,9 @@ class SiginViewController: BaseViewController {
         self.requestWith(task: getMessageTask) { (data) in
             if let arrayMessage = data as? [Message] {
                 let oldNumberMessage: Int = notice.numberMessage!
-                Contants.shared.numberNewMessage = arrayMessage.count - oldNumberMessage
+                for index in 0..<arrayMessage.count - oldNumberMessage where !arrayMessage[index].isMyOwner {
+                    Contants.shared.numberNewMessage += 1
+                }
                 Contants.shared.totalMessage = arrayMessage.count
                 if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as? SWRevealViewController {
                     self.present(vc, animated: false, completion: nil)
@@ -36,7 +38,7 @@ class SiginViewController: BaseViewController {
         }
         let newNumberSeat = member.numberGuestMan! + member.numberGuestWoman!
         let oldNumberSeat = notice.numberSeat!
-        Contants.shared.numberNewSeat = newNumberSeat - oldNumberSeat
+        Contants.shared.numberNewSeat = abs(newNumberSeat - oldNumberSeat)
         Contants.shared.totalSeat = newNumberSeat
     }
 

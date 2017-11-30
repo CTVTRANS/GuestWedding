@@ -102,6 +102,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             notice.numberQuestion = Contants.shared.totalQuestion
             NoticeMember.saveNotice(noice: notice)
             NotificationCenter.default.post(name: notificationName, object: nil)
+            UIApplication.shared.openURL(URL(string: "http://www.freewed.com.tw/app/fac.aspx?ACCT=freewed")!)
             swVC?.revealToggle(animated: true)
             return
         case 5:

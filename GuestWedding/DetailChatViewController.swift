@@ -32,6 +32,7 @@ class DetailChatViewController: BaseViewController {
         setupNavigation()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: #selector(popViewController))
         getMessage()
+        NotificationCenter.default.addObserver(self, selector: #selector(getNewsMessage), name: Notification.Name("requestToServer"), object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardNotification(notification:)),
                                                name: NSNotification.Name.UIKeyboardWillChangeFrame,
@@ -42,6 +43,14 @@ class DetailChatViewController: BaseViewController {
     
     @objc func popViewController() {
         navigationController?.popViewController(animated: false)
+    }
+    
+    @objc func getNewsMessage() {
+        self.isMoreData = true
+        self.isScrollTop = false
+        self.listMessage.removeAll()
+        self.page = 1
+        self.getMessage()
     }
     
     func getMessage() {
@@ -126,12 +135,8 @@ class DetailChatViewController: BaseViewController {
         if textMessage.text != nil {
             let sendMessageTask = SendMessageTask(msg: textMessage.text!)
             requestWith(task: sendMessageTask, success: { (_) in
-                self.isMoreData = true
-                self.isScrollTop = false
+                self.getNewsMessage()
                 self.textMessage.text = ""
-                self.listMessage.removeAll()
-                self.page = 1
-                self.getMessage()
             })
         }
     }
@@ -208,7 +213,7 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let isTop = table.contentOffset.y <= 5 ? true : false
+        let isTop = table.contentOffset.y <= 10.0 ? true : false
         if isTop && isMoreData && !isLoading && !scrollView.isDragging {
             page += 1
             isLoading = true
@@ -236,6 +241,12 @@ extension DetailChatViewController: UIImagePickerControllerDelegate, UINavigatio
         if let chooseImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             dismiss(animated: true, completion: { [unowned self] in
                  self.popView.avatar.image = chooseImage
+                if let data = UIImageJPEGRepresentation(chooseImage, 0.8) {
+                    let update = UpdateGuestInfo(data: data, flieName: "abc.jpeg")
+                    self.upLoas(task: update, success: { (data) in
+                        
+                    })
+                }
             })
         }
     }
