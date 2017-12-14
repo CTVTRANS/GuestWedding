@@ -1377,6 +1377,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pressedSearch:" destination="Sui-6l-g7p" eventType="touchUpInside" id="Dcn-Jy-cCy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1549,7 +1552,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyb-v2-sHN">
                                                     <rect key="frame" x="24" y="32" width="190" height="38"/>
-                                                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="13"/>
                                                     <color key="textColor" red="0.18431372549019609" green="0.20392156862745098" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -1596,7 +1599,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="08X-6A-0ew"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="13"/>
                                                     <color key="textColor" red="0.18431372549019609" green="0.20392156862745098" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>

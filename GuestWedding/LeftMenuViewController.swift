@@ -88,7 +88,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             notice.numberMessage = Contants.shared.totalMessage
             NoticeMember.saveNotice(noice: notice)
             NotificationCenter.default.post(name: notificationName, object: nil)
-            vc = storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
+            vc = storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as? DetailChatViewController
         case 3:
             Contants.shared.numberNewSeat = 0
             let notice = NoticeMember.getNotice()

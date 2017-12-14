@@ -25,6 +25,7 @@
 		9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF31FA82D400081D840 /* DetailChatViewController.swift */; };
 		9D076F3C1FCE6161008D8334 /* UpdateGuestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */; };
 		9D2872361FAC02C600FDD27F /* GetMessageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2872351FAC02C600FDD27F /* GetMessageTask.swift */; };
+		9D8C605E1FE288800064DDED /* FindMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C605D1FE288800064DDED /* FindMember.swift */; };
 		9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */; };
 		9DCDEE4E1FA976300055FE59 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4D1FA976300055FE59 /* Extension.swift */; };
 		9DCDEE501FA982360055FE59 /* SiginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4F1FA982360055FE59 /* SiginTask.swift */; };
@@ -63,6 +64,7 @@
 		9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGuestInfo.swift; sourceTree = "<group>"; };
 		9D2872351FAC02C600FDD27F /* GetMessageTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMessageTask.swift; sourceTree = "<group>"; };
 		9D3D76471FAD562100857BB3 /* GuestWedding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GuestWedding.entitlements; sourceTree = "<group>"; };
+		9D8C605D1FE288800064DDED /* FindMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMember.swift; sourceTree = "<group>"; };
 		9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKNetwork.swift; sourceTree = "<group>"; };
 		9DCDEE4D1FA976300055FE59 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9DCDEE4F1FA982360055FE59 /* SiginTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiginTask.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				9D2872351FAC02C600FDD27F /* GetMessageTask.swift */,
 				9DEEF6FD1FB9469C00FEE1AE /* SendMessageTask.swift */,
 				9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */,
+				9D8C605D1FE288800064DDED /* FindMember.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D8C605E1FE288800064DDED /* FindMember.swift in Sources */,
 				9DCDEE531FA988350055FE59 /* DefineURL.swift in Sources */,
 				9D032CE81FA820E80081D840 /* MainViewController.swift in Sources */,
 				9DFC2E4B1FA9B88E00059A3D /* AddMemberTask.swift in Sources */,

@@ -111,7 +111,6 @@ class MainViewController: BaseViewController {
         isNewMessage = false
         NoticeMember.saveNotice(noice: notice)
         if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as? DetailChatViewController {
-            vc.member = Contants.shared.currentMember
             navigationController?.pushViewController(vc, animated: false)
         }
     }

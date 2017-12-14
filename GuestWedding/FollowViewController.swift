@@ -17,6 +17,13 @@ class FollowViewController: BaseViewController {
         setupNavigation()
     }
     
+    @IBAction func pressedSearch(_ sender: Any) {
+        let task = FindMember(nameSearch: nameMember.text!)
+        requestWith(task: task) { (data) in
+            debugPrint(data)
+        }
+    }
+    
     @IBAction func pressedFlow(_ sender: Any) {
         if nameMember.text != nil {
             let followMember = AddMemberTask(actionTag: "GuestAddMemberTrace", member: nameMember.text!)

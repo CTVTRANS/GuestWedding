@@ -13,7 +13,8 @@ class DetailChatViewController: BaseViewController {
     @IBOutlet weak var bottomContraint: NSLayoutConstraint!
     @IBOutlet weak var textMessage: UITextView!
     @IBOutlet weak var table: UITableView!
-    var member: Member?
+    
+    var member = Contants.shared.currentMember
     var listMessage: [Message] = []
     var tap: UITapGestureRecognizer?
     
@@ -24,7 +25,7 @@ class DetailChatViewController: BaseViewController {
     var isMoreData = true
     var isScrollTop = false
     var firstGoToView = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         showActivity(inView: self.view)
@@ -47,7 +48,6 @@ class DetailChatViewController: BaseViewController {
     
     @objc func getNewsMessage() {
         self.isMoreData = true
-        self.isScrollTop = false
         self.listMessage.removeAll()
         self.page = 1
         self.getMessage()
@@ -61,12 +61,11 @@ class DetailChatViewController: BaseViewController {
                 if arrayMessage.count == 0 {
                     self.isMoreData = false
                 }
-                self.listMessage += arrayMessage
+                self.listMessage.insert(contentsOf: arrayMessage.reversed(), at: 0)
                 self.table.reloadData()
                 if self.isScrollTop {
                     let index = IndexPath(row: arrayMessage.count, section: 0)
                     self.table.scrollToRow(at: index, at: .top, animated: false)
-                    self.isScrollTop = false
                 } else {
                     if self.firstGoToView {
                         self.firstGoToView = false
@@ -113,9 +112,6 @@ class DetailChatViewController: BaseViewController {
                            options: animationCurve,
                            animations: { self.view.layoutIfNeeded() },
                            completion: nil)
-            DispatchQueue.main.async(execute: {
-//                self.scrollLastMessage()
-            })
         }
     }
     
@@ -133,10 +129,13 @@ class DetailChatViewController: BaseViewController {
     
     @IBAction func pressedSendMsg(_ sender: Any) {
         if textMessage.text != nil {
-            let sendMessageTask = SendMessageTask(msg: textMessage.text!)
+            isScrollTop = false
+            let message = textMessage.text
+            self.textMessage.text = ""
+            scrollLastMessage(animated: true)
+            let sendMessageTask = SendMessageTask(msg: message!)
             requestWith(task: sendMessageTask, success: { (_) in
                 self.getNewsMessage()
-                self.textMessage.text = ""
             })
         }
     }
@@ -199,8 +198,7 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let numberMessage = listMessage.count - 1
-        let message = listMessage[numberMessage - indexPath.row]
+        let message = listMessage[indexPath.row]
         if message.isMyOwner {
            return myCellMsg(indexPath: indexPath, myMessage: message)
         } else {
@@ -243,7 +241,7 @@ extension DetailChatViewController: UIImagePickerControllerDelegate, UINavigatio
                  self.popView.avatar.image = chooseImage
                 if let data = UIImageJPEGRepresentation(chooseImage, 0.8) {
                     let update = UpdateGuestInfo(data: data, flieName: "abc.jpeg")
-                    self.upLoas(task: update, success: { (data) in
+                    self.upLoas(task: update, success: { (_) in
                         
                     })
                 }
