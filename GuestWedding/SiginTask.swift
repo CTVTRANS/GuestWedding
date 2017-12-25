@@ -12,37 +12,30 @@ import SwiftyJSON
 class SiginTask: LKNetwork {
     
     var idGuest: String!
+    var nameMemer: String!
     
-    init(idGuest: String) {
+    init(idGuest: String, nameMember: String) {
         self.idGuest = idGuest
+        self.nameMemer = nameMember
     }
     
     override func path() -> String {
-        return siginURL
+        return siginURL + "id=\(idGuest!)"
     }
     
     override func method() -> HTTPMethod {
-        return .GET
+        return .POST
     }
     
     override func parameters() -> [String: Any] {
-        return ["id": idGuest]
+        return ["MemberList": nameMemer]
     }
     
     override func dataWithResponse(_ response: Any) -> Any {
-        var guest: Guest?
-        var listMember: [Member] = []
-        if let json = response as? JSON {
-            guest = Guest(json)
-            let arrayMember = json["MEMBER_LIST"].array
-            if arrayMember?.first != nil {
-                for jsomMember in arrayMember! {
-                    let member = Member(json: jsomMember)
-                    listMember.append(member)
-                }
-            }
-            return (guest, listMember)
+        guard let json = response as? JSON else {
+            return ""
         }
-        return ""
+        let memberAccount = json["MEMBER_ACCOUNT_LIST"].stringValue
+        return memberAccount
     }
 }

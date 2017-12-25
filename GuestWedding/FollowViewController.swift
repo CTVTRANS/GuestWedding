@@ -26,10 +26,13 @@ class FollowViewController: BaseViewController {
     
     @IBAction func pressedFlow(_ sender: Any) {
         if nameMember.text != nil {
-            let followMember = AddMemberTask(actionTag: "GuestAddMemberTrace", member: nameMember.text!)
-            requestWith(task: followMember, success: { (_) in
-                
-            })
+            let followMember = AddMemberTask(member: nameMember.text!)
+            requestWith(task: followMember) { (data) in
+                if let member = data as? Member {
+                    Contants.shared.currentMember = member
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
     }
     

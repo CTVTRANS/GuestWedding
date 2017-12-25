@@ -45,7 +45,7 @@ class LeftMenuCell: UITableViewCell {
 class LeftMenuViewController: BaseViewController {
 
     @IBOutlet weak var table: UITableView!
-    var arrayMenu = ["row 1", "row2", "row3", "row4", "row5", "row6"]
+    var arrayMenu = ["邀約平台/貴賓回函", "新人快訊", "桌位圖發佈", "諮詢回覆", "重新追蹤新人"]
     let notificationName = Notification.Name("refreshNotification")
     
     override func viewDidLoad() {
@@ -76,27 +76,24 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         var vc: BaseViewController? = nil
         switch indexPath.row {
         case 0:
-            swVC?.revealToggle(animated: true)
-            return
-        case 1:
             UIApplication.shared.openURL(URL(string: (Contants.shared.currentMember?.linkweb)!)!)
             swVC?.revealToggle(animated: true)
             return
-        case 2:
+        case 1:
             Contants.shared.numberNewMessage = 0
             let notice = NoticeMember.getNotice()
             notice.numberMessage = Contants.shared.totalMessage
             NoticeMember.saveNotice(noice: notice)
             NotificationCenter.default.post(name: notificationName, object: nil)
             vc = storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as? DetailChatViewController
-        case 3:
+        case 2:
             Contants.shared.numberNewSeat = 0
             let notice = NoticeMember.getNotice()
             notice.numberSeat = Contants.shared.totalSeat
             NoticeMember.saveNotice(noice: notice)
             NotificationCenter.default.post(name: notificationName, object: nil)
             vc = storyboard?.instantiateViewController(withIdentifier: "SeatViewController") as? SeatViewController
-        case 4:
+        case 3:
             Contants.shared.numberNewQuestion = 0
             let notice = NoticeMember.getNotice()
             notice.numberQuestion = Contants.shared.totalQuestion
@@ -105,7 +102,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             UIApplication.shared.openURL(URL(string: "http://www.freewed.com.tw/app/fac.aspx?ACCT=freewed")!)
             swVC?.revealToggle(animated: true)
             return
-        case 5:
+        case 4:
             vc = storyboard?.instantiateViewController(withIdentifier: "FollowViewController") as? FollowViewController
         default:
             break

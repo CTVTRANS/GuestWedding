@@ -121,7 +121,7 @@ class LKNetwork: NSObject {
         request?.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request?.httpBody = createBodyWithParameters(parameters: params,
                                                      filePathKey: patkKeyFile,
-                                                     imageDataKey: imageData! as NSData,
+                                                     imageDataKey: imageData,
                                                      filename: fileName,
                                                      boundary: boundary) as Data
         setUpTimeOut()
@@ -146,7 +146,7 @@ class LKNetwork: NSObject {
     
     func createBodyWithParameters(parameters: [String: Any]?,
                                   filePathKey: String?,
-                                  imageDataKey: NSData,
+                                  imageDataKey: NSData?,
                                   filename: String,
                                   boundary: String) -> NSData {
         let body = NSMutableData()
@@ -161,7 +161,9 @@ class LKNetwork: NSObject {
         body.appendString("--\(boundary)\r\n")
         body.appendString("Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
         body.appendString("Content-Type: \(mimetype)\r\n\r\n")
-        body.append(imageDataKey as Data)
+        if let myData = imageDataKey as Data? {
+             body.append(myData)
+        }
         body.appendString("\r\n")
         body.appendString("--\(boundary)--\r\n")
         return body
@@ -193,7 +195,7 @@ class LKNetwork: NSObject {
         return ""
     }
     
-    func dataUpLoad() -> Data? {
+    func dataUpLoad() -> NSData? {
         return nil
     }
     

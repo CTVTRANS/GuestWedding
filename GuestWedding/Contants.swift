@@ -18,6 +18,7 @@ class Contants {
     var totalQuestion: Int = 0
     
     var currentMember: Member?
+    var token = ""
     
     static let shared = Contants()
     private init() {}

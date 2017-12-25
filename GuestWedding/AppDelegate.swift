@@ -28,17 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        let notificationName = Notification.Name("requestToServer")
-//        NotificationCenter.default.post(name: notificationName, object: nil)
-//        let aps = userInfo["aps"] as? [String: AnyObject]
-//        print(aps!)
-//    }
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         let aps = userInfo["aps"] as? [String: AnyObject]
-        NotificationCenter.default.post(name: Notification.Name("requestToServer"), object: nil)
         print(aps!)
+        let notificationName = Notification.Name("recivePush")
+        NotificationCenter.default.post(name: notificationName, object: nil)
+        debugPrint(userInfo)
+        if let messagetype = userInfo["MESSAGE_TYPE"] as? String {
+            debugPrint(messagetype)
+            NotificationCenter.default.post(name: notificationName, object: messagetype)
+        }
     }
 
     func registerForPushNotifications() {
@@ -80,6 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return String(format: "%02.2hhx", data)
         }
         let token = tokenParts.joined()
+        Contants.shared.token = token
         print("Device Token: \(token)")
     }
     

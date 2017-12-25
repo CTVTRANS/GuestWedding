@@ -17,14 +17,15 @@ class DetailChatViewController: BaseViewController {
     var member = Contants.shared.currentMember
     var listMessage: [Message] = []
     var tap: UITapGestureRecognizer?
+    fileprivate var avatar: NSData?
     
-    var popView: SetupProfile!
-    let picker = UIImagePickerController()
-    var page: Int = 1
-    var isLoading = false
-    var isMoreData = true
-    var isScrollTop = false
-    var firstGoToView = true
+    fileprivate var popView: SetupProfile!
+    fileprivate let picker = UIImagePickerController()
+    fileprivate var page: Int = 1
+    fileprivate var isLoading = false
+    fileprivate var isMoreData = true
+    fileprivate var isScrollTop = false
+    fileprivate var firstGoToView = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,7 @@ class DetailChatViewController: BaseViewController {
                 if self.isScrollTop {
                     let index = IndexPath(row: arrayMessage.count, section: 0)
                     self.table.scrollToRow(at: index, at: .top, animated: false)
+                    
                 } else {
                     if self.firstGoToView {
                         self.firstGoToView = false
@@ -83,8 +85,8 @@ class DetailChatViewController: BaseViewController {
             if self.listMessage.count > 0 {
                 let index = IndexPath(row: self.listMessage.count - 1, section: 0)
                 self.table.scrollToRow(at: index, at: .bottom, animated: animated)
-                self.stopActivityIndicator()
             }
+            self.stopActivityIndicator()
         }
     }
     
@@ -125,6 +127,14 @@ class DetailChatViewController: BaseViewController {
         popView?.callBack = { [unowned self] in
             self.pickPhoto()
         }
+        popView.changeProfile = { [unowned self] (name) in
+            let update = UpdateGuestInfo(data: self.avatar, username: name, mobile: nil, email: nil)
+            self.upLoas(task: update, success: { (data) in
+                if let msg = data as? String {
+                    debugPrint(msg)
+                }
+            })
+        }
     }
     
     @IBAction func pressedSendMsg(_ sender: Any) {
@@ -134,9 +144,9 @@ class DetailChatViewController: BaseViewController {
             self.textMessage.text = ""
             scrollLastMessage(animated: true)
             let sendMessageTask = SendMessageTask(msg: message!)
-            requestWith(task: sendMessageTask, success: { (_) in
+            requestWith(task: sendMessageTask) { (_) in
                 self.getNewsMessage()
-            })
+            }
         }
     }
 }
@@ -224,6 +234,7 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
 extension DetailChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func pickPhoto() {
+        picker.navigationBar.tintColor = UIColor.blue
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
@@ -238,12 +249,9 @@ extension DetailChatViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let chooseImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             dismiss(animated: true, completion: { [unowned self] in
-                 self.popView.avatar.image = chooseImage
-                if let data = UIImageJPEGRepresentation(chooseImage, 0.8) {
-                    let update = UpdateGuestInfo(data: data, flieName: "abc.jpeg")
-                    self.upLoas(task: update, success: { (_) in
-                        
-                    })
+                self.popView.avatar.image = chooseImage
+                if let data = UIImageJPEGRepresentation(chooseImage, 0.8) as NSData? {
+                     self.avatar = data
                 }
             })
         }

@@ -47,7 +47,7 @@ class BaseViewController: UIViewController {
     
     func upLoas(task: LKNetwork, success: @escaping BlockSucess) {
         task.upLoadData(sucess: { (data) in
-            
+            success(data)
         }) { (_) in
             
         }

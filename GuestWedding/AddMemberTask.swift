@@ -11,20 +11,18 @@ import SwiftyJSON
 
 class AddMemberTask: LKNetwork {
     
-    var todo: String!
-    var member: String!
+    var memberAccount: String!
     
-    init(actionTag: String, member: String) {
-        todo = actionTag
-        self.member = member
+    init(member: String) {
+        self.memberAccount = member
     }
     
     override func path() -> String {
-        return followMemberURL + "id=" + Guest.shared.idGuest!
+        return followMemberURL + "id=" + Guest.shared.account
     }
     
     override func parameters() -> [String: Any] {
-        return ["todo": todo, "MemberList": member]
+        return ["todo": "GuestAddMemberTrace", "MemberList": memberAccount]
     }
     
     override func method() -> HTTPMethod {
@@ -32,9 +30,23 @@ class AddMemberTask: LKNetwork {
     }
     
     override func dataWithResponse(_ response: Any) -> Any {
-        if let json = response as? JSON {
-            if let msg = json["ErrMsg"].string {
-                return msg
+        if let jsonResponse = response as? JSON {
+            guard let msg = jsonResponse["ErrCode"].string  else {
+                return ""
+            }
+            guard let errorCode = Int(msg) else {
+                return ""
+            }
+            guard errorCode >= 0  else {
+                return ""
+            }
+            if let jsons = jsonResponse["MEMBER_LIST"].array {
+                for json in jsons {
+                    let member = Member.decodeJson(json)
+                    if member.idMember == memberAccount {
+                        return member
+                    }
+                }
             }
         }
         return ""

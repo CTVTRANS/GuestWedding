@@ -11,12 +11,16 @@ import SwiftyJSON
 
 class UpdateGuestInfo: LKNetwork {
     
-    var data: Data
-    var fileName: String
+    var data: NSData?
+    var userName: String?
+    var mobile: String?
+    var email: String?
     
-    init(data: Data, flieName: String) {
+    init(data: NSData?, username: String?, mobile: String?, email: String?) {
         self.data = data
-        self.fileName = flieName
+        self.userName = username
+        self.mobile = mobile
+        self.email = email
     }
     
     override func path() -> String {
@@ -24,7 +28,10 @@ class UpdateGuestInfo: LKNetwork {
     }
     
     override func parameters() -> [String: Any] {
-        return["todo": "UpdateGuestInfo"]
+        return["todo": "UpdateGuestInfo",
+               "USERNAME": userName,
+               "MOBILE": mobile,
+               "EMAIL": email]
     }
     
     override func name() -> String {
@@ -35,7 +42,7 @@ class UpdateGuestInfo: LKNetwork {
         return "avatar.png"
     }
     
-    override func dataUpLoad() -> Data? {
+    override func dataUpLoad() -> NSData? {
         return data
     }
     

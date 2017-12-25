@@ -25,6 +25,8 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var viewQuestion: UIView!
     @IBOutlet weak var numberQuestion: UILabel!
     
+    @IBOutlet var titleCounter: [UILabel]!
+    
     var isNewMessage: Bool = false {
         didSet {
             viewMessage.isHidden = !self.isNewMessage
@@ -48,6 +50,8 @@ class MainViewController: BaseViewController {
         setupNavigation()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_rightButton"), style: .plain, target: self, action: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadNumberNotification(notification:)), name: NSNotification.Name(rawValue: "refreshNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(requestToServer(notification:)), name: NSNotification.Name(rawValue: "recivePush"), object: nil)
+        sendToken()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,10 +66,10 @@ class MainViewController: BaseViewController {
     func setupUI() {
         nameMan.text = member?.manName
         nameWoman.text = member?.nameWoman
-        dateMan.text = member?.dateMan
-        dateWoman.text = member?.dateWoman
-        counDownMan.text = member?.counterManDate
-        counDownWoman.text = member?.counterWomanDate
+        dateMan.text = "男方場 " + (member?.dateMan)!
+        dateWoman.text = "女方場 " + (member?.dateWoman)!
+        counDownMan.text = (member?.counterManDate)!
+        counDownWoman.text = (member?.counterWomanDate)!
         let strokeTextDate: [NSAttributedStringKey: Any] = [
             NSAttributedStringKey.strokeColor: UIColor.rgb(255, 80, 167),
             NSAttributedStringKey.strokeWidth: -3.0
@@ -79,6 +83,9 @@ class MainViewController: BaseViewController {
         dateWoman.attributedText = NSAttributedString(string: dateWoman.text!, attributes: strokeTextDate)
         counDownMan.attributedText = NSAttributedString(string: counDownMan.text!, attributes: strokeTextCountDonwn)
         counDownWoman.attributedText = NSAttributedString(string: counDownWoman.text!, attributes: strokeTextCountDonwn)
+        for label in titleCounter {
+            label.attributedText = NSAttributedString(string: label.text!, attributes: strokeTextCountDonwn)
+        }
     }
     
     @objc func reloadNumberNotification(notification: Notification) {
@@ -134,5 +141,35 @@ class MainViewController: BaseViewController {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "FollowViewController") as? FollowViewController {
             navigationController?.pushViewController(vc, animated: false)
         }
+    }
+    
+    @objc func requestToServer(notification: Notification) {
+        guard let name = notification.object as? String else {
+            return
+        }
+        switch name {
+        case "VIPLetter":
+            Contants.shared.totalQuestion += 1
+            Contants.shared.numberNewQuestion += 1
+        case "MemberAddMessageToGuest":
+            Contants.shared.totalMessage += 1
+            Contants.shared.numberNewMessage += 1
+        case "FACTORY_DOC_TABLE_UPLOAD", "FACTORY_DOC_WEDSTEP_UPLOAD", "MEMBER_DOC_OPEN_1", "MEMBER_DOC_OPEN_2", "MEMBER_DOC_OPEN_3", "MEMBER_DOC_TOFAC_4", "MEMBER_DOC_TOFAC_5":
+            Contants.shared.totalSeat += 1
+            Contants.shared.numberNewSeat += 1
+        default:
+            break
+        }
+        self.setupNotice()
+    }
+    
+    func sendToken() {
+        let token = (Contants.shared.token == "") ? nil :  Contants.shared.token
+        let update = UpdateToken(token: token)
+        self.upLoas(task: update, success: { (data) in
+            if let msg = data as? String {
+                debugPrint(msg)
+            }
+        })
     }
 }

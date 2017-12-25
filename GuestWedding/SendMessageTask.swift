@@ -17,7 +17,7 @@ class SendMessageTask: LKNetwork {
     }
 
     override func path() -> String {
-        return sendMessageURL + "id=" + Guest.shared.account!.description
+        return sendMessageURL + "id=" + Guest.shared.account
     }
     
     override func method() -> HTTPMethod {
@@ -27,7 +27,7 @@ class SendMessageTask: LKNetwork {
     override func parameters() -> [String: Any] {
         return ["msg": message,
                 "todo": "GuestAddMessageToMember",
-                "MemberList": Contants.shared.currentMember!.idMember!]
+                "MemberList": Contants.shared.currentMember!.idMember]
     }
     
     override func dataWithResponse(_ response: Any) -> Any {

@@ -24,8 +24,13 @@
 		9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF11FA82D330081D840 /* ChatViewController.swift */; };
 		9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF31FA82D400081D840 /* DetailChatViewController.swift */; };
 		9D076F3C1FCE6161008D8334 /* UpdateGuestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */; };
+		9D114FCF1FEE160A0070107C /* 黑體W9-GB5.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */; };
+		9D1F476C1FED0714002CDD7D /* 華康超明體_(P).TTC in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */; };
+		9D1F476E1FED18F7002CDD7D /* UpdateToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F476D1FED18F7002CDD7D /* UpdateToken.swift */; };
 		9D2872361FAC02C600FDD27F /* GetMessageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2872351FAC02C600FDD27F /* GetMessageTask.swift */; };
+		9D58D3621FEA1BA900200A77 /* GetInfoMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D58D3611FEA1BA900200A77 /* GetInfoMember.swift */; };
 		9D8C605E1FE288800064DDED /* FindMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C605D1FE288800064DDED /* FindMember.swift */; };
+		9D9B466C1FEA49C800ADC543 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B466B1FEA49C800ADC543 /* Cache.swift */; };
 		9DCDEE4C1FA9670D0055FE59 /* LKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */; };
 		9DCDEE4E1FA976300055FE59 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4D1FA976300055FE59 /* Extension.swift */; };
 		9DCDEE501FA982360055FE59 /* SiginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDEE4F1FA982360055FE59 /* SiginTask.swift */; };
@@ -62,9 +67,14 @@
 		9D032CF11FA82D330081D840 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9D032CF31FA82D400081D840 /* DetailChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
 		9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGuestInfo.swift; sourceTree = "<group>"; };
+		9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "黑體W9-GB5.ttf"; sourceTree = "<group>"; };
+		9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */ = {isa = PBXFileReference; lastKnownFileType = file; path = "華康超明體_(P).TTC"; sourceTree = "<group>"; };
+		9D1F476D1FED18F7002CDD7D /* UpdateToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateToken.swift; sourceTree = "<group>"; };
 		9D2872351FAC02C600FDD27F /* GetMessageTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMessageTask.swift; sourceTree = "<group>"; };
 		9D3D76471FAD562100857BB3 /* GuestWedding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GuestWedding.entitlements; sourceTree = "<group>"; };
+		9D58D3611FEA1BA900200A77 /* GetInfoMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoMember.swift; sourceTree = "<group>"; };
 		9D8C605D1FE288800064DDED /* FindMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMember.swift; sourceTree = "<group>"; };
+		9D9B466B1FEA49C800ADC543 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKNetwork.swift; sourceTree = "<group>"; };
 		9DCDEE4D1FA976300055FE59 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9DCDEE4F1FA982360055FE59 /* SiginTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiginTask.swift; sourceTree = "<group>"; };
@@ -156,6 +166,8 @@
 		9D032CE41FA81DF40081D840 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */,
+				9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */,
 				9DCDEE4D1FA976300055FE59 /* Extension.swift */,
 				9D032CD91FA81BB10081D840 /* Assets.xcassets */,
 				9D032CDB1FA81BB10081D840 /* LaunchScreen.storyboard */,
@@ -169,10 +181,12 @@
 			children = (
 				9DCDEE4B1FA9670D0055FE59 /* LKNetwork.swift */,
 				9DCDEE4F1FA982360055FE59 /* SiginTask.swift */,
+				9D58D3611FEA1BA900200A77 /* GetInfoMember.swift */,
 				9DFC2E4A1FA9B88E00059A3D /* AddMemberTask.swift */,
 				9D2872351FAC02C600FDD27F /* GetMessageTask.swift */,
 				9DEEF6FD1FB9469C00FEE1AE /* SendMessageTask.swift */,
 				9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */,
+				9D1F476D1FED18F7002CDD7D /* UpdateToken.swift */,
 				9D8C605D1FE288800064DDED /* FindMember.swift */,
 			);
 			name = Network;
@@ -201,6 +215,7 @@
 				9DFE98781FB0424D0064243A /* Contants.swift */,
 				9DFE987C1FB04B280064243A /* NoticeMember.swift */,
 				9DEEF6F71FB9444000FEE1AE /* Storage.swift */,
+				9D9B466B1FEA49C800ADC543 /* Cache.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -278,10 +293,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D114FCF1FEE160A0070107C /* 黑體W9-GB5.ttf in Resources */,
 				9D032CDD1FA81BB10081D840 /* LaunchScreen.storyboard in Resources */,
 				9D032CDA1FA81BB10081D840 /* Assets.xcassets in Resources */,
 				9D032CD81FA81BB10081D840 /* Main.storyboard in Resources */,
 				9D0094911FAAD13300A64CA9 /* SetupProfile.xib in Resources */,
+				9D1F476C1FED0714002CDD7D /* 華康超明體_(P).TTC in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +394,11 @@
 				9D032CEA1FA827280081D840 /* SiginViewController.swift in Sources */,
 				9DEEF6F81FB9444100FEE1AE /* Storage.swift in Sources */,
 				9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */,
+				9D1F476E1FED18F7002CDD7D /* UpdateToken.swift in Sources */,
+				9D58D3621FEA1BA900200A77 /* GetInfoMember.swift in Sources */,
 				9DFC2E471FA9B6BC00059A3D /* Member.swift in Sources */,
 				9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */,
+				9D9B466C1FEA49C800ADC543 /* Cache.swift in Sources */,
 				9DCDEE4E1FA976300055FE59 /* Extension.swift in Sources */,
 				9D032CD31FA81BB10081D840 /* AppDelegate.swift in Sources */,
 				9D032CEE1FA82CD90081D840 /* FollowViewController.swift in Sources */,

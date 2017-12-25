@@ -12,7 +12,8 @@ let widthScreen: CGFloat = UIScreen.main.bounds.width
 let hightScreen: CGFloat = UIScreen.main.bounds.height
 
 let baseURL = "http://www.freewed.com.tw"
-let siginURL = "/api/GetGuestInfo.aspx?"
+let siginURL = "/api/LoginGuest.aspx?"
+let getInfo = "/api/GetGuestInfo.aspx?"
 let followMemberURL = "/api/UpdateData.aspx?"
 let getMessageURL = "/api/GetGuestMemberHistoryMessage.aspx?"
 let sendMessageURL = "/api/UpdateData.aspx?"

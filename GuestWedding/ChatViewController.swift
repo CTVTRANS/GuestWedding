@@ -19,18 +19,18 @@ class ChatViewController: BaseViewController {
         table.tableFooterView = UIView()
         table.estimatedRowHeight = 140
         setupNavigation()
-        getMember()
+//        getMember()
     }
     
-    func getMember() {
-        let getInfo = SiginTask(idGuest: Guest.shared.account!)
-        requestWith(task: getInfo) { (data) in
-            if let data = data as? (Guest, [Member]) {
-                self.listMember = data.1
-                self.table.reloadData()
-            }
-        }
-    }
+//    func getMember() {
+//        let getInfo = SiginTask(idGuest: Guest.shared.account!, nameMember: <#String#>)
+//        requestWith(task: getInfo) { (data) in
+//            if let data = data as? (Guest, [Member]) {
+//                self.listMember = data.1
+//                self.table.reloadData()
+//            }
+//        }
+//    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -52,7 +52,7 @@ class MemberCell: UITableViewCell {
     
     func binData(member: Member) {
         nameMember.text = member.nameMember
-        let getNewestMessage = GetMessageTask(userID: member.idMember!, page: 0)
+        let getNewestMessage = GetMessageTask(userID: member.idMember, page: 0)
         getNewestMessage.requestServer(sucess: { (data) in
             if let listMessage = data as? [Message] {
                 if listMessage.last != nil {

@@ -29,7 +29,10 @@ class GetMessageTask: LKNetwork {
     }
     
     override func parameters() -> [String: Any] {
-        return ["id": Guest.shared.idGuest!, "user_id": userID, "pno": page, "pnum": limit]
+        return ["id": Guest.shared.account,
+                "user_id": userID,
+                "pno": page,
+                "pnum": limit]
     }
     
     override func dataWithResponse(_ response: Any) -> Any {
