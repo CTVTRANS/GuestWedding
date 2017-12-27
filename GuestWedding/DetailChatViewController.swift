@@ -56,7 +56,7 @@ class DetailChatViewController: BaseViewController {
     
     func getMessage() {
         let getMessageTask = GetMessageTask( userID: (member?.idMember)!, page: page)
-        requestWith(task: getMessageTask) { (data) in
+        requestWith(task: getMessageTask, success: { (data) in
             if let arrayMessage = data as? [Message] {
                 self.isLoading = false
                 if arrayMessage.count == 0 {
@@ -77,6 +77,8 @@ class DetailChatViewController: BaseViewController {
                     }
                 }
             }
+        }) { (error) in
+            UIAlertController.showAlertWith(title: "", message: error, in: self)
         }
     }
     
@@ -128,7 +130,7 @@ class DetailChatViewController: BaseViewController {
             self.pickPhoto()
         }
         popView.changeProfile = { [unowned self] (name) in
-            let update = UpdateGuestInfo(data: self.avatar, username: name, mobile: nil, email: nil)
+            let update = UpdateGuestInfo(data: self.avatar, username: name, mobile: "", email: "")
             self.upLoas(task: update, success: { (data) in
                 if let msg = data as? String {
                     debugPrint(msg)
@@ -144,17 +146,24 @@ class DetailChatViewController: BaseViewController {
             self.textMessage.text = ""
             scrollLastMessage(animated: true)
             let sendMessageTask = SendMessageTask(msg: message!)
-            requestWith(task: sendMessageTask) { (_) in
-                self.getNewsMessage()
-            }
+            requestWith(task: sendMessageTask, success: { (_) in
+                
+            }, failure: { (_) in
+                
+            })
         }
     }
 }
 
 class MyCellMessage: UITableViewCell {
     
+    @IBOutlet weak var test: UIImageView!
     @IBOutlet weak var contentMsg: UILabel!
     @IBOutlet weak var time: UILabel!
+    
+    override func awakeFromNib() {
+        test.tintColor = UIColor.green
+    }
     
     func binData(message: Message) {
         contentMsg.text = message.messageBoby

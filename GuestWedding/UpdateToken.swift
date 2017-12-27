@@ -11,8 +11,8 @@ import SwiftyJSON
 
 class UpdateToken: LKNetwork {
 
-    var token: String?
-    init(token: String?) {
+    var token: String!
+    init(token: String!) {
         self.token = token
     }
     

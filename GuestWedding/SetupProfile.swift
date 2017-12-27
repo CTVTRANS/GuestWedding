@@ -27,6 +27,10 @@ class SetupProfile: BaseDailog, UIImagePickerControllerDelegate, UINavigationCon
     }
     
     @IBAction func pressedSendChange(_ sender: Any) {
+        if name.text == "" {
+            changeProfile(Guest.shared.account)
+            return
+        }
         changeProfile(name.text!)
     }
     

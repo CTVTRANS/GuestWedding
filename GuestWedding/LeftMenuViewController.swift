@@ -57,6 +57,11 @@ class LeftMenuViewController: BaseViewController {
         super.viewWillAppear(animated)
         table.reloadData()
     }
+    @IBAction func pressedBackHome(_ sender: Any) {
+        let navigationVC = swVC?.frontViewController as? UINavigationController
+        navigationVC?.popToRootViewController(animated: false)
+        swVC?.pushFrontViewController(navigationVC, animated: true)
+    }
 }
 
 extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {

@@ -19,20 +19,24 @@ class FollowViewController: BaseViewController {
     
     @IBAction func pressedSearch(_ sender: Any) {
         let task = FindMember(nameSearch: nameMember.text!)
-        requestWith(task: task) { (data) in
+        requestWith(task: task, success: { (data) in
             debugPrint(data)
+        }) { (error) in
+            UIAlertController.showAlertWith(title: "", message: error, in: self)
         }
     }
     
     @IBAction func pressedFlow(_ sender: Any) {
         if nameMember.text != nil {
             let followMember = AddMemberTask(member: nameMember.text!)
-            requestWith(task: followMember) { (data) in
+            requestWith(task: followMember, success: { (data) in
                 if let member = data as? Member {
                     Contants.shared.currentMember = member
                     self.navigationController?.popViewController(animated: true)
                 }
-            }
+            }, failure: { (error) in
+                UIAlertController.showAlertWith(title: "", message: error, in: self)
+            })
         }
     }
     

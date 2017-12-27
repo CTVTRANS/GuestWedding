@@ -66,7 +66,7 @@ extension UITextView {
                     || device == .iPhone8 {
                     sizeScale = 1.2
                 } else if device == .simulator(.iPhone6Plus) || device == .simulator(.iPhone7Plus)
-                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus)
+                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus) || device == .iPhone6sPlus || device == .iPhoneX
                     || device == .iPhone8Plus {
                     sizeScale = 1.3
                 }
@@ -92,7 +92,7 @@ extension UILabel {
                     || device == .iPhone8 {
                     sizeScale = 1.2
                 } else if device == .simulator(.iPhone6Plus) || device == .simulator(.iPhone7Plus)
-                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus)
+                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus) || device == .iPhone6sPlus || device == .iPhoneX
                     || device == .iPhone8Plus {
                     sizeScale = 1.3
                 }
@@ -118,7 +118,7 @@ extension UITextField {
                     || device == .iPhone8 {
                     sizeScale = 1.2
                 } else if device == .simulator(.iPhone6Plus) || device == .simulator(.iPhone7Plus)
-                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus)
+                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus) || device == .iPhone6sPlus || device == .iPhoneX
                     || device == .iPhone8Plus {
                     sizeScale = 1.3
                 }
@@ -144,7 +144,7 @@ extension NSLayoutConstraint {
                     || device == .iPhone8 {
                     sizeScale = 1.2
                 } else if device == .simulator(.iPhone6Plus) || device == .simulator(.iPhone7Plus)
-                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus)
+                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus) || device == .iPhone6sPlus || device == .iPhoneX
                     || device == .iPhone8Plus {
                     sizeScale = 1.3
                 }
@@ -171,7 +171,7 @@ extension UIButton {
                     || device == .iPhone8 {
                     sizeScale = 1.2
                 } else if device == .simulator(.iPhone6Plus) || device == .simulator(.iPhone7Plus)
-                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus)
+                    || device == .iPhone6Plus || device == .iPhone7Plus || device == .simulator(.iPhone8Plus) || device == .iPhone6sPlus || device == .iPhoneX
                     || device == .iPhone8Plus {
                     sizeScale = 1.3
                 }

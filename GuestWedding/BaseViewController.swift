@@ -36,12 +36,11 @@ class BaseViewController: UIViewController {
         
     }
     
-    func requestWith(task: LKNetwork, success: @escaping BlockSucess) {
+    func requestWith(task: LKNetwork, success: @escaping BlockSucess, failure: @escaping BlockFailure) {
         task.requestServer(sucess: { (data) in
             success(data)
         }) { (error) in
-            self.stopActivityIndicator()
-            UIAlertController.showAlertWith(title: "", message: error, in: self)
+            failure(error)
         }
     }
     

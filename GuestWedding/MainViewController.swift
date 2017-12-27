@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class MainViewController: BaseViewController {
+    
     @IBOutlet weak var nameCompany: UILabel!
     @IBOutlet weak var nameMan: UILabel!
     @IBOutlet weak var nameWoman: UILabel!
@@ -172,4 +173,10 @@ class MainViewController: BaseViewController {
             }
         })
     }
+}
+
+extension MainViewController {
+    
+
+    
 }

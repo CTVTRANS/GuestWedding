@@ -23,6 +23,7 @@
 		9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CEF1FA82CF20081D840 /* SeatViewController.swift */; };
 		9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF11FA82D330081D840 /* ChatViewController.swift */; };
 		9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF31FA82D400081D840 /* DetailChatViewController.swift */; };
+		9D073A0B1FF262ED009F2568 /* SplashViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D073A0A1FF262ED009F2568 /* SplashViewcontroller.swift */; };
 		9D076F3C1FCE6161008D8334 /* UpdateGuestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */; };
 		9D114FCF1FEE160A0070107C /* 黑體W9-GB5.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */; };
 		9D1F476C1FED0714002CDD7D /* 華康超明體_(P).TTC in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */; };
@@ -66,6 +67,7 @@
 		9D032CEF1FA82CF20081D840 /* SeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
 		9D032CF11FA82D330081D840 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9D032CF31FA82D400081D840 /* DetailChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
+		9D073A0A1FF262ED009F2568 /* SplashViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewcontroller.swift; sourceTree = "<group>"; };
 		9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGuestInfo.swift; sourceTree = "<group>"; };
 		9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "黑體W9-GB5.ttf"; sourceTree = "<group>"; };
 		9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */ = {isa = PBXFileReference; lastKnownFileType = file; path = "華康超明體_(P).TTC"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				9D032CEF1FA82CF20081D840 /* SeatViewController.swift */,
 				9D032CF11FA82D330081D840 /* ChatViewController.swift */,
 				9D032CF31FA82D400081D840 /* DetailChatViewController.swift */,
+				9D073A0A1FF262ED009F2568 /* SplashViewcontroller.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */,
 				9D1F476E1FED18F7002CDD7D /* UpdateToken.swift in Sources */,
 				9D58D3621FEA1BA900200A77 /* GetInfoMember.swift in Sources */,
+				9D073A0B1FF262ED009F2568 /* SplashViewcontroller.swift in Sources */,
 				9DFC2E471FA9B6BC00059A3D /* Member.swift in Sources */,
 				9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */,
 				9D9B466C1FEA49C800ADC543 /* Cache.swift in Sources */,

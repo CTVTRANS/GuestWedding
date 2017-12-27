@@ -24,7 +24,7 @@ class SiginViewController: BaseViewController {
         let notice = NoticeMember.getNotice()
         let member = Contants.shared.currentMember!
         let getMessageTask = GetMessageTask(userID: (member.idMember), page: 0)
-        self.requestWith(task: getMessageTask) { (data) in
+        requestWith(task: getMessageTask, success: { (data) in
             if let arrayMessage = data as? [Message] {
                 let oldNumberMessage: Int = notice.numberMessage!
                 for index in 0..<arrayMessage.count - oldNumberMessage where !arrayMessage[index].isMyOwner {
@@ -35,6 +35,8 @@ class SiginViewController: BaseViewController {
                     self.present(vc, animated: false, completion: nil)
                 }
             }
+        }) { (_) in
+            
         }
 
         let newNumberSeat = member.numberGuestMan + member.numberGuestWoman
@@ -46,12 +48,13 @@ class SiginViewController: BaseViewController {
     @IBAction func pressedSigin(_ sender: Any) {
         showActivity(inView: self.view)
         let siginTask = SiginTask(idGuest: emailGuest.text!, nameMember: nameMember.text!)
-        requestWith(task: siginTask) { (memberAccount) in
+        requestWith(task: siginTask, success: { (memberAccount) in
             guard let memberAccount = memberAccount as? String else {
                 return
             }
+            
             let task = GetInfo(idGuest: self.emailGuest.text!, nameMember: memberAccount)
-            self.requestWith(task: task) { (data) in
+            self.requestWith(task: task, success: { (data) in
                 self.stopActivityIndicator()
                 if let data = data as? (Guest, Member) {
                     let guest = data.0
@@ -60,11 +63,15 @@ class SiginViewController: BaseViewController {
                     caheGuest.save(object: guest)
                     let caheMember = Cache<Member>()
                     caheMember.save(object: data.1)
-                    
                     Contants.shared.currentMember = data.1
+                    self.stopActivityIndicator()
                     self.getMessage()
                 }
-            }
+            }, failure: { (error) in
+                UIAlertController.showAlertWith(title: "", message: error, in: self)
+            })
+        }) { (error) in
+             UIAlertController.showAlertWith(title: "", message: error, in: self)
         }
     }
 }

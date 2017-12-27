@@ -12,11 +12,11 @@ import SwiftyJSON
 class UpdateGuestInfo: LKNetwork {
     
     var data: NSData?
-    var userName: String?
-    var mobile: String?
-    var email: String?
+    var userName: String!
+    var mobile: String!
+    var email: String!
     
-    init(data: NSData?, username: String?, mobile: String?, email: String?) {
+    init(data: NSData?, username: String, mobile: String, email: String) {
         self.data = data
         self.userName = username
         self.mobile = mobile

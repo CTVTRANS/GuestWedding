@@ -32,12 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let aps = userInfo["aps"] as? [String: AnyObject]
         print(aps!)
         let notificationName = Notification.Name("recivePush")
-        NotificationCenter.default.post(name: notificationName, object: nil)
         debugPrint(userInfo)
         if let messagetype = userInfo["MESSAGE_TYPE"] as? String {
             debugPrint(messagetype)
             NotificationCenter.default.post(name: notificationName, object: messagetype)
         }
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        let notificationName = Notification.Name("recivePush")
+        NotificationCenter.default.post(name: notificationName, object: "nil")
     }
 
     func registerForPushNotifications() {
@@ -85,17 +89,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Failed to register: \(error)")
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-       
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-       
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        
     }
 }
