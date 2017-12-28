@@ -15,9 +15,10 @@ class GetMessageTask: LKNetwork {
     var page: Int!
     var limit = 20
     
-    init( userID: String, page: Int) {
+    init( userID: String, page: Int, limit: Int) {
         self.userID = userID
         self.page = page
+        self.limit = limit
     }
 
     override func path() -> String {

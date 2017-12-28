@@ -25,9 +25,14 @@
 		9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF31FA82D400081D840 /* DetailChatViewController.swift */; };
 		9D073A0B1FF262ED009F2568 /* SplashViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D073A0A1FF262ED009F2568 /* SplashViewcontroller.swift */; };
 		9D076F3C1FCE6161008D8334 /* UpdateGuestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */; };
+		9D0941EC1FF3969000F6765C /* SearchMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0941EB1FF3969000F6765C /* SearchMember.swift */; };
+		9D0941EE1FF396D200F6765C /* SearchMember.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0941ED1FF396D200F6765C /* SearchMember.xib */; };
 		9D114FCF1FEE160A0070107C /* 黑體W9-GB5.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */; };
+		9D123BC91FF4E95D00EC0F54 /* UpdateStatusMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D123BC81FF4E95D00EC0F54 /* UpdateStatusMessage.swift */; };
 		9D1F476C1FED0714002CDD7D /* 華康超明體_(P).TTC in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */; };
 		9D1F476E1FED18F7002CDD7D /* UpdateToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F476D1FED18F7002CDD7D /* UpdateToken.swift */; };
+		9D2373891FF497F00033C091 /* MemberViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2373871FF497F00033C091 /* MemberViewCell.swift */; };
+		9D23738A1FF497F00033C091 /* MemberViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D2373881FF497F00033C091 /* MemberViewCell.xib */; };
 		9D2872361FAC02C600FDD27F /* GetMessageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2872351FAC02C600FDD27F /* GetMessageTask.swift */; };
 		9D58D3621FEA1BA900200A77 /* GetInfoMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D58D3611FEA1BA900200A77 /* GetInfoMember.swift */; };
 		9D8C605E1FE288800064DDED /* FindMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C605D1FE288800064DDED /* FindMember.swift */; };
@@ -69,9 +74,14 @@
 		9D032CF31FA82D400081D840 /* DetailChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
 		9D073A0A1FF262ED009F2568 /* SplashViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewcontroller.swift; sourceTree = "<group>"; };
 		9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGuestInfo.swift; sourceTree = "<group>"; };
+		9D0941EB1FF3969000F6765C /* SearchMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMember.swift; sourceTree = "<group>"; };
+		9D0941ED1FF396D200F6765C /* SearchMember.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchMember.xib; sourceTree = "<group>"; };
 		9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "黑體W9-GB5.ttf"; sourceTree = "<group>"; };
+		9D123BC81FF4E95D00EC0F54 /* UpdateStatusMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStatusMessage.swift; sourceTree = "<group>"; };
 		9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */ = {isa = PBXFileReference; lastKnownFileType = file; path = "華康超明體_(P).TTC"; sourceTree = "<group>"; };
 		9D1F476D1FED18F7002CDD7D /* UpdateToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateToken.swift; sourceTree = "<group>"; };
+		9D2373871FF497F00033C091 /* MemberViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewCell.swift; sourceTree = "<group>"; };
+		9D2373881FF497F00033C091 /* MemberViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberViewCell.xib; sourceTree = "<group>"; };
 		9D2872351FAC02C600FDD27F /* GetMessageTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMessageTask.swift; sourceTree = "<group>"; };
 		9D3D76471FAD562100857BB3 /* GuestWedding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GuestWedding.entitlements; sourceTree = "<group>"; };
 		9D58D3611FEA1BA900200A77 /* GetInfoMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoMember.swift; sourceTree = "<group>"; };
@@ -126,6 +136,10 @@
 				9D00948B1FAAD09800A64CA9 /* BaseDailog.swift */,
 				9D00948E1FAAD11F00A64CA9 /* SetupProfile.swift */,
 				9D0094901FAAD13300A64CA9 /* SetupProfile.xib */,
+				9D0941EB1FF3969000F6765C /* SearchMember.swift */,
+				9D0941ED1FF396D200F6765C /* SearchMember.xib */,
+				9D2373871FF497F00033C091 /* MemberViewCell.swift */,
+				9D2373881FF497F00033C091 /* MemberViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 				9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */,
 				9D1F476D1FED18F7002CDD7D /* UpdateToken.swift */,
 				9D8C605D1FE288800064DDED /* FindMember.swift */,
+				9D123BC81FF4E95D00EC0F54 /* UpdateStatusMessage.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -302,6 +317,8 @@
 				9D032CD81FA81BB10081D840 /* Main.storyboard in Resources */,
 				9D0094911FAAD13300A64CA9 /* SetupProfile.xib in Resources */,
 				9D1F476C1FED0714002CDD7D /* 華康超明體_(P).TTC in Resources */,
+				9D23738A1FF497F00033C091 /* MemberViewCell.xib in Resources */,
+				9D0941EE1FF396D200F6765C /* SearchMember.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,13 +403,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D123BC91FF4E95D00EC0F54 /* UpdateStatusMessage.swift in Sources */,
 				9D8C605E1FE288800064DDED /* FindMember.swift in Sources */,
 				9DCDEE531FA988350055FE59 /* DefineURL.swift in Sources */,
+				9D2373891FF497F00033C091 /* MemberViewCell.swift in Sources */,
 				9D032CE81FA820E80081D840 /* MainViewController.swift in Sources */,
 				9DFC2E4B1FA9B88E00059A3D /* AddMemberTask.swift in Sources */,
 				9DFE98791FB0424D0064243A /* Contants.swift in Sources */,
 				9D2872361FAC02C600FDD27F /* GetMessageTask.swift in Sources */,
 				9DFE987D1FB04B280064243A /* NoticeMember.swift in Sources */,
+				9D0941EC1FF3969000F6765C /* SearchMember.swift in Sources */,
 				9D00948A1FAABB5500A64CA9 /* Message.swift in Sources */,
 				9D032CEA1FA827280081D840 /* SiginViewController.swift in Sources */,
 				9DEEF6F81FB9444100FEE1AE /* Storage.swift in Sources */,

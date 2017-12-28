@@ -25,3 +25,19 @@ class SplashViewcontroller: BaseViewController {
         }
     }
 }
+
+extension Date {
+    static func convertToDateWith(timeInt: String, withFormat: String) -> Date? {
+        let dateFomater = DateFormatter()
+        dateFomater.dateFormat = withFormat
+        let date = dateFomater.date(from: timeInt)
+        return date
+    }
+    
+    static func convert(date: Date, toString timeOut: String) -> String {
+        let dateFomater = DateFormatter()
+        dateFomater.dateFormat = timeOut
+        let dateString = dateFomater.string(from: date)
+        return dateString
+    }
+}

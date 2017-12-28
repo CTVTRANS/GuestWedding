@@ -18,6 +18,7 @@ let followMemberURL = "/api/UpdateData.aspx?"
 let getMessageURL = "/api/GetGuestMemberHistoryMessage.aspx?"
 let sendMessageURL = "/api/UpdateData.aspx?"
 let seachMemberURL = "/api/GetMemberSearch.aspx?"
+let updateMessageStatus = "/api/UpdateGuestMemberMessageStatus.aspx?"
 
 class DefineURL: NSObject {
 

@@ -17,15 +17,16 @@ class DetailChatViewController: BaseViewController {
     var member = Contants.shared.currentMember
     var listMessage: [Message] = []
     var tap: UITapGestureRecognizer?
-    fileprivate var avatar: NSData?
+    private var avatar: NSData?
     
-    fileprivate var popView: SetupProfile!
-    fileprivate let picker = UIImagePickerController()
-    fileprivate var page: Int = 1
-    fileprivate var isLoading = false
-    fileprivate var isMoreData = true
-    fileprivate var isScrollTop = false
-    fileprivate var firstGoToView = true
+    private var popView: SetupProfile!
+    private let picker = UIImagePickerController()
+    private var page: Int = 1
+    private var isLoading = false
+    private var isMoreData = true
+    private var isScrollTop = false
+    private var firstGoToView = true
+    private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +35,17 @@ class DetailChatViewController: BaseViewController {
         setupNavigation()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: #selector(popViewController))
         getMessage()
+        setupKeyboard()
         NotificationCenter.default.addObserver(self, selector: #selector(getNewsMessage), name: Notification.Name("requestToServer"), object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardNotification(notification:)),
-                                               name: NSNotification.Name.UIKeyboardWillChangeFrame,
-                                               object: nil)
         picker.delegate = self
         popView = SetupProfile.instance() as? SetupProfile
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(reGetMessage), userInfo: nil, repeats: true)
+    }
+    
+    func setupKeyboard() {
+        textMessage.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }
     
     @objc func popViewController() {
@@ -55,7 +60,7 @@ class DetailChatViewController: BaseViewController {
     }
     
     func getMessage() {
-        let getMessageTask = GetMessageTask( userID: (member?.idMember)!, page: page)
+        let getMessageTask = GetMessageTask( userID: (member?.idMember)!, page: page, limit: 30)
         requestWith(task: getMessageTask, success: { (data) in
             if let arrayMessage = data as? [Message] {
                 self.isLoading = false
@@ -83,39 +88,35 @@ class DetailChatViewController: BaseViewController {
     }
     
     func scrollLastMessage(animated: Bool) {
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
             if self.listMessage.count > 0 {
                 let index = IndexPath(row: self.listMessage.count - 1, section: 0)
                 self.table.scrollToRow(at: index, at: .bottom, animated: animated)
             }
             self.stopActivityIndicator()
+//        }
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap!)
+        self.navigationItem.leftBarButtonItem?.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            bottomContraint.constant = keyboardRectangle.height
+        }
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
         }
     }
     
-    @objc func keyboardNotification(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-            let duration: TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-            let animationCurve: UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
-            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
-                self.navigationItem.leftBarButtonItem?.isEnabled = true
-                self.navigationItem.rightBarButtonItem?.isEnabled = true
-                
-                bottomContraint.constant = 0.0
-            } else {
-                tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-                view.addGestureRecognizer(tap!)
-                self.navigationItem.leftBarButtonItem?.isEnabled = false
-                self.navigationItem.rightBarButtonItem?.isEnabled = false
-                bottomContraint.constant = (endFrame?.size.height)!
-            }
-            UIView.animate(withDuration: duration,
-                           delay: TimeInterval(0),
-                           options: animationCurve,
-                           animations: { self.view.layoutIfNeeded() },
-                           completion: nil)
+    @objc func keyboardWillHide(_ notification: Notification) {
+        self.navigationItem.leftBarButtonItem?.isEnabled = true
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
+        bottomContraint.constant = 0.0
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -153,6 +154,12 @@ class DetailChatViewController: BaseViewController {
             })
         }
     }
+    
+    deinit {
+        timer?.invalidate()
+        timer = nil
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 class MyCellMessage: UITableViewCell {
@@ -160,6 +167,7 @@ class MyCellMessage: UITableViewCell {
     @IBOutlet weak var test: UIImageView!
     @IBOutlet weak var contentMsg: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var status: UILabel!
     
     override func awakeFromNib() {
         test.tintColor = UIColor.green
@@ -167,15 +175,9 @@ class MyCellMessage: UITableViewCell {
     
     func binData(message: Message) {
         contentMsg.text = message.messageBoby
-        let timeDate = message.time?.components(separatedBy: "T")
-        let month: Int = Int(timeDate![0].components(separatedBy: "-")[1])!
-        let date: Int = Int(timeDate![0].components(separatedBy: "-")[2])!
-        
-        let timeHour = timeDate?[1]
-        let index = timeHour?.index((timeHour?.startIndex)!, offsetBy: 4)
-        
-        let timeMessage = String(month) + "/" + String(date)
-        time.text = timeMessage + " " + String((timeHour?[...index!])!)
+        let date = Date.convertToDateWith(timeInt: message.time, withFormat: "yyyy-MM-dd'T'HH-mm-ss")
+        let timeMessage = Date.convert(date: date!, toString: "MM/dd HH:mm")
+        time.text = timeMessage
     }
 }
 
@@ -186,15 +188,9 @@ class MemberCellMessage: UITableViewCell {
     
     func binData(message: Message) {
         contentMsg.text = message.messageBoby
-        let timeDate = message.time?.components(separatedBy: "T")
-        let month: Int = Int(timeDate![0].components(separatedBy: "-")[1])!
-        let date: Int = Int(timeDate![0].components(separatedBy: "-")[2])!
-        
-        let timeHour = timeDate?[1]
-        let index = timeHour?.index((timeHour?.startIndex)!, offsetBy: 4)
-        
-        let timeMessage = String(month) + "/" + String(date)
-        time.text = timeMessage + " " + String((timeHour?[...index!])!)
+        let date = Date.convertToDateWith(timeInt: message.time, withFormat: "yyyy-MM-dd'T'HH-mm-ss")
+        let timeMessage = Date.convert(date: date!, toString: "MM/dd HH:mm")
+        time.text = timeMessage
     }
 }
 
@@ -207,6 +203,16 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
     func myCellMsg(indexPath: IndexPath, myMessage: Message) -> MyCellMessage {
         let cell = table.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? MyCellMessage
         cell?.binData(message: myMessage)
+        if indexPath.row == (listMessage.count - 1) {
+            cell?.status.isHidden = false
+            if myMessage.isRead {
+                cell?.status.text = "seen"
+            } else {
+                cell?.status.text = "sent"
+            }
+        } else {
+            cell?.status.isHidden = true
+        }
         return cell!
     }
     
@@ -264,5 +270,31 @@ extension DetailChatViewController: UIImagePickerControllerDelegate, UINavigatio
                 }
             })
         }
+    }
+}
+
+extension DetailChatViewController: UITextViewDelegate {
+    
+    @objc func reGetMessage() {
+        let getMessageTask = GetMessageTask( userID: (member?.idMember)!, page: 1, limit: listMessage.count)
+        requestWith(task: getMessageTask, success: { (data) in
+            guard let list = data as? [Message] else {
+                return
+            }
+            self.listMessage.removeAll()
+            self.listMessage.append(contentsOf: list.reversed())
+            self.table.reloadData()
+        }) { (_) in
+            
+        }
+        
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        let task = UpdateStatusMessage(idMember: (member?.idMember)!)
+        requestWith(task: task, success: { (_) in
+        }) { (_) in
+        }
+        return true
     }
 }

@@ -23,7 +23,7 @@ class SiginViewController: BaseViewController {
     func getMessage() {
         let notice = NoticeMember.getNotice()
         let member = Contants.shared.currentMember!
-        let getMessageTask = GetMessageTask(userID: (member.idMember), page: 0)
+        let getMessageTask = GetMessageTask(userID: (member.idMember), page: 0, limit: 30)
         requestWith(task: getMessageTask, success: { (data) in
             if let arrayMessage = data as? [Message] {
                 let oldNumberMessage: Int = notice.numberMessage!
@@ -55,7 +55,6 @@ class SiginViewController: BaseViewController {
             
             let task = GetInfo(idGuest: self.emailGuest.text!, nameMember: memberAccount)
             self.requestWith(task: task, success: { (data) in
-                self.stopActivityIndicator()
                 if let data = data as? (Guest, Member) {
                     let guest = data.0
                     Guest.shared = guest
@@ -68,10 +67,12 @@ class SiginViewController: BaseViewController {
                     self.getMessage()
                 }
             }, failure: { (error) in
+                self.stopActivityIndicator()
                 UIAlertController.showAlertWith(title: "", message: error, in: self)
             })
         }) { (error) in
-             UIAlertController.showAlertWith(title: "", message: error, in: self)
+            self.stopActivityIndicator()
+            UIAlertController.showAlertWith(title: "", message: error, in: self)
         }
     }
 }

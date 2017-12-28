@@ -31,6 +31,17 @@ class FindMember: LKNetwork {
     }
     
     override func dataWithResponse(_ response: Any) -> Any {
-        return response
+        var listMember = [Member]()
+        guard let response = response as? JSON else {
+            return listMember
+        }
+        guard let jsons = response.array else {
+            return listMember
+        }
+        for json in jsons {
+            let member = Member.decodeJson(json)
+            listMember.append(member)
+        }
+        return listMember
     }
 }

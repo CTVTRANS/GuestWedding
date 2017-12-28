@@ -52,15 +52,15 @@ class MemberCell: UITableViewCell {
     
     func binData(member: Member) {
         nameMember.text = member.nameMember
-        let getNewestMessage = GetMessageTask(userID: member.idMember, page: 0)
+        let getNewestMessage = GetMessageTask(userID: member.idMember, page: 0, limit: 30)
         getNewestMessage.requestServer(sucess: { (data) in
             if let listMessage = data as? [Message] {
                 if listMessage.last != nil {
                     let newestMessage = listMessage.last!
                     self.contentMsg.text = newestMessage.messageBoby
-                    let timeDate = newestMessage.time?.components(separatedBy: "T")[0]
-                    let month: Int = Int((timeDate?.components(separatedBy: "-")[1])!)!
-                    let date: Int = Int((timeDate?.components(separatedBy: "-")[2])!)!
+                    let timeDate = newestMessage.time.components(separatedBy: "T")[0]
+                    let month: Int = Int((timeDate.components(separatedBy: "-")[1]))!
+                    let date: Int = Int((timeDate.components(separatedBy: "-")[2]))!
                     self.time.text = String(month) + "/" + String(date)
                 }
             }
