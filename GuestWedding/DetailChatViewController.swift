@@ -14,7 +14,7 @@ class DetailChatViewController: BaseViewController {
     @IBOutlet weak var textMessage: UITextView!
     @IBOutlet weak var table: UITableView!
     
-    var member = Contants.shared.currentMember
+    var member = Member.shared
     var listMessage: [Message] = []
     var tap: UITapGestureRecognizer?
     private var avatar: NSData?
@@ -39,7 +39,7 @@ class DetailChatViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(getNewsMessage), name: Notification.Name("requestToServer"), object: nil)
         picker.delegate = self
         popView = SetupProfile.instance() as? SetupProfile
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(reGetMessage), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(reGetMessage), userInfo: nil, repeats: true)
     }
     
     func setupKeyboard() {
@@ -60,7 +60,7 @@ class DetailChatViewController: BaseViewController {
     }
     
     func getMessage() {
-        let getMessageTask = GetMessageTask( userID: (member?.idMember)!, page: page, limit: 30)
+        let getMessageTask = GetMessageTask( userID: member.idMember, page: page, limit: 30)
         requestWith(task: getMessageTask, success: { (data) in
             if let arrayMessage = data as? [Message] {
                 self.isLoading = false
@@ -276,7 +276,7 @@ extension DetailChatViewController: UIImagePickerControllerDelegate, UINavigatio
 extension DetailChatViewController: UITextViewDelegate {
     
     @objc func reGetMessage() {
-        let getMessageTask = GetMessageTask( userID: (member?.idMember)!, page: 1, limit: listMessage.count)
+        let getMessageTask = GetMessageTask( userID: member.idMember, page: 1, limit: listMessage.count)
         requestWith(task: getMessageTask, success: { (data) in
             guard let list = data as? [Message] else {
                 return
@@ -291,7 +291,7 @@ extension DetailChatViewController: UITextViewDelegate {
     }
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        let task = UpdateStatusMessage(idMember: (member?.idMember)!)
+        let task = UpdateStatusMessage(idMember: member.idMember)
         requestWith(task: task, success: { (_) in
         }) { (_) in
         }

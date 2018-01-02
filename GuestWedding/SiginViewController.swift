@@ -22,7 +22,7 @@ class SiginViewController: BaseViewController {
     
     func getMessage() {
         let notice = NoticeMember.getNotice()
-        let member = Contants.shared.currentMember!
+        let member = Member.shared
         let getMessageTask = GetMessageTask(userID: (member.idMember), page: 0, limit: 30)
         requestWith(task: getMessageTask, success: { (data) in
             if let arrayMessage = data as? [Message] {
@@ -52,24 +52,28 @@ class SiginViewController: BaseViewController {
             guard let memberAccount = memberAccount as? String else {
                 return
             }
-            
-            let task = GetInfo(idGuest: self.emailGuest.text!, nameMember: memberAccount)
-            self.requestWith(task: task, success: { (data) in
-                if let data = data as? (Guest, Member) {
-                    let guest = data.0
-                    Guest.shared = guest
-                    let caheGuest = Cache<Guest>()
-                    caheGuest.save(object: guest)
-                    let caheMember = Cache<Member>()
-                    caheMember.save(object: data.1)
-                    Contants.shared.currentMember = data.1
-                    self.stopActivityIndicator()
-                    self.getMessage()
-                }
-            }, failure: { (error) in
-                self.stopActivityIndicator()
-                UIAlertController.showAlertWith(title: "", message: error, in: self)
-            })
+            Guest.shared.account = self.emailGuest.text!
+            Member.shared.idMember = memberAccount
+//            let task = GetInfo(idGuest: self.emailGuest.text!, nameMember: memberAccount)
+//            self.requestWith(task: task, success: { (data) in
+//                if let data = data as? (Guest, Member) {
+//                    let guest = data.0
+//                    Guest.shared = guest
+//                    let caheGuest = Cache<Guest>()
+//                    caheGuest.save(object: guest)
+//                    let caheMember = Cache<Member>()
+//                    caheMember.save(object: data.1)
+//                    Contants.shared.currentMember = data.1
+//                    self.stopActivityIndicator()
+                    if let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as? SWRevealViewController {
+                        self.present(vc, animated: false, completion: nil)
+                    }
+//                    self.getMessage()
+//                }
+//            }, failure: { (error) in
+//                self.stopActivityIndicator()
+//                UIAlertController.showAlertWith(title: "", message: error, in: self)
+//            })
         }) { (error) in
             self.stopActivityIndicator()
             UIAlertController.showAlertWith(title: "", message: error, in: self)

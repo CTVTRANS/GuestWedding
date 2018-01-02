@@ -22,6 +22,7 @@ struct Member {
     static let kCounterManDate = "counterManDate"
     static let kCounterWomanDate = "counterWomanDate"
     static let kLinkweb = "linkweb"
+    static let kImageOfSeat = "imageOfSeat"
 
     var idMember = ""
     var nameMember = ""
@@ -34,6 +35,7 @@ struct Member {
     var counterManDate = ""
     var counterWomanDate = ""
     var linkweb: String = ""
+    var imageOfSeat = ""
     
     static func decodeJson(_ json: JSON) -> Member {
         return Member(idMember: json["ACCOUNT"].stringValue,
@@ -46,9 +48,11 @@ struct Member {
                       numberGuestWoman: json["VIPLETTERCOUNT2"].intValue,
                       counterManDate: json["ENGDTDCounter"].stringValue,
                       counterWomanDate: json["COUPLEENGDTDCounter"].stringValue,
-                      linkweb: json["MEMBER_URL"].stringValue
+                      linkweb: json["MEMBER_URL"].stringValue,
+                      imageOfSeat: json["MEMBER_DOC_TABLE_URL"].stringValue
         )
     }
+    static var shared = Member()
 }
 
 extension HeperMember: Encodable {
@@ -76,6 +80,7 @@ class HeperMember: NSObject, NSCoding {
         aCoder.encode(member?.counterManDate, forKey: Member.kCounterManDate)
         aCoder.encode(member?.counterWomanDate, forKey: Member.kCounterWomanDate)
         aCoder.encode(member?.linkweb, forKey: Member.kLinkweb)
+        aCoder.encode(member?.imageOfSeat, forKey: Member.kImageOfSeat)
     }
     
     var member: Member?
@@ -96,7 +101,8 @@ class HeperMember: NSObject, NSCoding {
         let numberWoman = aDecoder.decodeObject(forKey: Member.kNumberGuestWoman) as? Int,
         let counterMan = aDecoder.decodeObject(forKey: Member.kCounterManDate) as? String,
         let counterWoman = aDecoder.decodeObject(forKey: Member.kCounterWomanDate) as? String,
-        let linkWed = aDecoder.decodeObject(forKey: Member.kLinkweb) as? String else {
+        let linkWed = aDecoder.decodeObject(forKey: Member.kLinkweb) as? String,
+        let imageOfSeat =  aDecoder.decodeObject(forKey: Member.kImageOfSeat) as? String else {
                 member = nil
                 super.init()
                 return nil
@@ -112,7 +118,8 @@ class HeperMember: NSObject, NSCoding {
                         numberGuestWoman: numberWoman,
                         counterManDate: counterMan,
                         counterWomanDate: counterWoman,
-                        linkweb: linkWed)
+                        linkweb: linkWed,
+                        imageOfSeat: imageOfSeat)
         super.init()
     }
 }

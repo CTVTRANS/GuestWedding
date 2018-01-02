@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CE0-Qq-gp6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GtX-pC-IU1">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -832,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HG9-tp-5Az" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4357.5" y="729.92957746478874"/>
+            <point key="canvasLocation" x="4755" y="729.92957746478874"/>
         </scene>
         <!--婚禮助手App-->
         <scene sceneID="NjK-tm-eey">
@@ -847,7 +847,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundGlobal" translatesAutoresizingMaskIntoConstraints="NO" id="jEO-8G-lWs">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-qR-xaX">
                                 <rect key="frame" x="0.0" y="536" width="320" height="32"/>
@@ -905,7 +905,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7v-Gl-wjy">
-                                <rect key="frame" x="55" y="87" width="210" height="230"/>
+                                <rect key="frame" x="55" y="43" width="210" height="230"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLogin" translatesAutoresizingMaskIntoConstraints="NO" id="7ZB-Va-gQL">
                                         <rect key="frame" x="0.0" y="0.0" width="210" height="230"/>
@@ -1136,25 +1136,6 @@
             </objects>
             <point key="canvasLocation" x="3358" y="39"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cw3-Hf-x99">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CE0-Qq-gp6" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c9X-zq-5Rp">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94117647059999998" green="0.65490196079999996" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="CQJ-iY-nwm" kind="relationship" relationship="rootViewController" id="1KN-1L-YPY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9LN-5K-PN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1772" y="35"/>
-        </scene>
         <!--Splash Viewcontroller-->
         <scene sceneID="kLp-e3-NJC">
             <objects>
@@ -1168,10 +1149,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2lW-rX-Ndx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBg-Zp-hZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2586" y="771"/>
+            <point key="canvasLocation" x="1856" y="37"/>
         </scene>
         <!--Left Menu View Controller-->
         <scene sceneID="Sfs-qq-wXC">
@@ -1625,20 +1607,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f44-Dx-uqa">
-                                <rect key="frame" x="187" y="20.5" width="92" height="30"/>
+                                <rect key="frame" x="181" y="19" width="98" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="賓客名稱設定"/>
                                 <connections>
                                     <action selector="pressedUpdateProfile:" destination="5em-Zy-5zV" eventType="touchUpInside" id="66P-pR-lIj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新人即時訊息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojz-q7-nNw">
-                                <rect key="frame" x="41" y="25" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="41" y="25" width="98" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OUH-Lj-Fwf">
-                                <rect key="frame" x="41" y="58.5" width="238" height="469.5"/>
+                                <rect key="frame" x="41" y="59" width="238" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberCell" rowHeight="78" id="kmF-3C-xO3" customClass="MemberCellMessage" customModule="GuestWedding" customModuleProvider="target">
@@ -1912,7 +1895,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jon-lB-4Oe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6052.5" y="729.92957746478874"/>
+            <point key="canvasLocation" x="6450" y="729.92957746478874"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="MDF-Zj-UK7">
@@ -2133,7 +2116,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ht2-c5-V5Z" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5267" y="730"/>
+            <point key="canvasLocation" x="5664.375" y="729.92957746478874"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tVJ-CX-d3S">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GtX-pC-IU1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jzo-Sa-d5t">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.55294117649999996" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6hZ-3T-8YV" kind="relationship" relationship="rootViewController" id="iQj-Cq-qiE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLk-OB-hJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224" y="37"/>
         </scene>
     </scenes>
     <resources>

@@ -27,7 +27,7 @@ class SendMessageTask: LKNetwork {
     override func parameters() -> [String: Any] {
         return ["msg": message,
                 "todo": "GuestAddMessageToMember",
-                "MemberList": Contants.shared.currentMember!.idMember]
+                "MemberList": Member.shared.idMember]
     }
     
     override func dataWithResponse(_ response: Any) -> Any {

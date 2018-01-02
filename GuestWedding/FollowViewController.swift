@@ -51,7 +51,10 @@ class FollowViewController: BaseViewController {
             let followMember = AddMemberTask(member: nameMember.text!)
             requestWith(task: followMember, success: { (data) in
                 if let member = data as? Member {
-                    Contants.shared.currentMember = member
+                    Member.shared = member
+                    let memberCache = Cache<Member>()
+                    memberCache.remove()
+                    memberCache.save(object: member)
                     self.navigationController?.popViewController(animated: true)
                 }
             }, failure: { (error) in

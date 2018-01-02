@@ -81,7 +81,7 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         var vc: BaseViewController? = nil
         switch indexPath.row {
         case 0:
-            UIApplication.shared.openURL(URL(string: (Contants.shared.currentMember?.linkweb)!)!)
+            UIApplication.shared.openURL(URL(string: Member.shared.linkweb)!)
             swVC?.revealToggle(animated: true)
             return
         case 1:

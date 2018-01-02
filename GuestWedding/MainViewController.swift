@@ -53,18 +53,19 @@ class MainViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadNumberNotification(notification:)), name: NSNotification.Name(rawValue: "refreshNotification"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(requestToServer(notification:)), name: NSNotification.Name(rawValue: "recivePush"), object: nil)
         sendToken()
+        getMember()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-        member = Contants.shared.currentMember
-        setupUI()
+        getMember()
         setupNotice()
     }
     
     func setupUI() {
+        member = Member.shared
         nameMan.text = member?.manName
         nameWoman.text = member?.nameWoman
         dateMan.text = "男方場 " + (member?.dateMan)!
@@ -149,13 +150,13 @@ class MainViewController: BaseViewController {
             return
         }
         switch name {
-        case "VIPLetter":
+        case "FACTORY_REQUEST_RELA":
             Contants.shared.totalQuestion += 1
             Contants.shared.numberNewQuestion += 1
         case "MemberAddMessageToGuest":
             Contants.shared.totalMessage += 1
             Contants.shared.numberNewMessage += 1
-        case "FACTORY_DOC_TABLE_UPLOAD", "FACTORY_DOC_WEDSTEP_UPLOAD", "MEMBER_DOC_OPEN_1", "MEMBER_DOC_OPEN_2", "MEMBER_DOC_OPEN_3", "MEMBER_DOC_TOFAC_4", "MEMBER_DOC_TOFAC_5":
+        case "MEMBER_DOC_OPEN_1", "MEMBER_DOC_OPEN_2":
             Contants.shared.totalSeat += 1
             Contants.shared.numberNewSeat += 1
         default:
@@ -173,10 +174,24 @@ class MainViewController: BaseViewController {
             }
         })
     }
-}
-
-extension MainViewController {
     
-
-    
+    func getMember() {
+        let task = GetInfo(idGuest: Guest.shared.account, nameMember: Member.shared.idMember)
+        self.requestWith(task: task, success: { (data) in
+            if let data = data as? (Guest, Member) {
+                let guest = data.0
+                Guest.shared = guest
+                let caheGuest = Cache<Guest>()
+                caheGuest.save(object: guest)
+                let caheMember = Cache<Member>()   
+                caheMember.save(object: data.1)
+                Member.shared = data.1
+                self.stopActivityIndicator()
+                self.setupUI()
+            }
+        }, failure: { (error) in
+            self.stopActivityIndicator()
+            UIAlertController.showAlertWith(title: "", message: error, in: self)
+        })
+    }
 }

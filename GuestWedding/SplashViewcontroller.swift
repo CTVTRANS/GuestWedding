@@ -13,13 +13,17 @@ class SplashViewcontroller: BaseViewController {
 
     override func viewDidLoad() {
         let guestCache = Cache<Guest>()
+        let memberCache = Cache<Member>()
         let guest = guestCache.fetchObject()
         guard guest != nil, guest?.account != "" else {
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
-                self.present(vc, animated: false, completion: nil)
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "SiginViewController") as? SiginViewController {
+                navigationController?.pushViewController(vc, animated: false)
+//                self.present(vc, animated: false, completion: nil)
             }
             return
         }
+        Member.shared = memberCache.fetchObject()!
+        Guest.shared = guest!
         if let vc = storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as? SWRevealViewController {
             self.present(vc, animated: false, completion: nil)
         }
