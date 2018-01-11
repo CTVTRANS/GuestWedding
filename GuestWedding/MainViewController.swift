@@ -53,7 +53,7 @@ class MainViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadNumberNotification(notification:)), name: NSNotification.Name(rawValue: "refreshNotification"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(requestToServer(notification:)), name: NSNotification.Name(rawValue: "recivePush"), object: nil)
         sendToken()
-        getMember()
+        getNotice()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +88,7 @@ class MainViewController: BaseViewController {
         for label in titleCounter {
             label.attributedText = NSAttributedString(string: label.text!, attributes: strokeTextCountDonwn)
         }
+        nameCompany.text = Member.shared.nameCompany
     }
     
     @objc func reloadNumberNotification(notification: Notification) {
@@ -114,28 +115,31 @@ class MainViewController: BaseViewController {
     }
     
     @IBAction func pressedMessage(_ sender: Any) {
-        let notice = NoticeMember.getNotice()
-        notice.numberMessage = Contants.shared.totalMessage
         Contants.shared.numberNewMessage = 0
+        let task = UpdateNotice(type: 1)
+        requestWith(task: task, success: { (_) in}) { (_) in}
         isNewMessage = false
-        NoticeMember.saveNotice(noice: notice)
         if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as? DetailChatViewController {
             navigationController?.pushViewController(vc, animated: false)
         }
     }
     
     @IBAction func pressedShowSeat(_ sender: Any) {
-        let notice = NoticeMember.getNotice()
-        notice.numberSeat = Contants.shared.totalSeat
         Contants.shared.numberNewSeat = 0
+        let task = UpdateNotice(type: 2)
+        requestWith(task: task, success: { (_) in}) { (_) in}
         isNewSeat = false
-        NoticeMember.saveNotice(noice: notice)
         if let vc = storyboard?.instantiateViewController(withIdentifier: "SeatViewController") as? SeatViewController {
             navigationController?.pushViewController(vc, animated: false)
         }
     }
     
     @IBAction func pressedQAWeb(_ sender: Any) {
+        Contants.shared.numberNewQuestion = 0
+        setupNotice()
+        let task = UpdateNotice(type: 4)
+        isNewQuestion = false
+        requestWith(task: task, success: { (_) in}) { (_) in}
         UIApplication.shared.openURL(URL(string: "http://www.freewed.com.tw/app/fac.aspx?ACCT=freewed")!)
     }
 
@@ -150,19 +154,16 @@ class MainViewController: BaseViewController {
             return
         }
         switch name {
-        case "FACTORY_REQUEST_RELA":
-            Contants.shared.totalQuestion += 1
+        case "FACTORY_REQUEST_RELAY":
             Contants.shared.numberNewQuestion += 1
-        case "MemberAddMessageToGuest":
-            Contants.shared.totalMessage += 1
+        case "MemberAddMessageToGuest", "FactoryAddMessageToGuest":
             Contants.shared.numberNewMessage += 1
-        case "MEMBER_DOC_OPEN_1", "MEMBER_DOC_OPEN_2":
-            Contants.shared.totalSeat += 1
+        case "MEMBER_DOC_OPEN_1", "MEMBER_DOC_OPEN_2", "MEMBER_DOC_OPEN_3":
             Contants.shared.numberNewSeat += 1
         default:
-            break
+            getNotice()
         }
-        self.setupNotice()
+        setupNotice()
     }
     
     func sendToken() {
@@ -193,5 +194,19 @@ class MainViewController: BaseViewController {
             self.stopActivityIndicator()
             UIAlertController.showAlertWith(title: "", message: error, in: self)
         })
+    }
+    
+    func getNotice() {
+        let task = GetNumberMessage()
+        requestWith(task: task, success: { (data) in
+            if let listNotice = data as? (Int, Int, Int) {
+                Contants.shared.numberNewMessage = listNotice.0
+                Contants.shared.numberNewQuestion = listNotice.1
+                Contants.shared.numberNewSeat = listNotice.2
+                self.setupNotice()
+            }
+        }) { (_) in
+            
+        }
     }
 }

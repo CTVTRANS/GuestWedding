@@ -36,7 +36,7 @@ class DetailChatViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_back"), style: .plain, target: self, action: #selector(popViewController))
         getMessage()
         setupKeyboard()
-        NotificationCenter.default.addObserver(self, selector: #selector(getNewsMessage), name: Notification.Name("requestToServer"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getNewsMessage), name: Notification.Name("recivePush"), object: nil)
         picker.delegate = self
         popView = SetupProfile.instance() as? SetupProfile
         timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(reGetMessage), userInfo: nil, repeats: true)
@@ -132,10 +132,8 @@ class DetailChatViewController: BaseViewController {
         }
         popView.changeProfile = { [unowned self] (name) in
             let update = UpdateGuestInfo(data: self.avatar, username: name, mobile: "", email: "")
-            self.upLoas(task: update, success: { (data) in
-                if let msg = data as? String {
-                    debugPrint(msg)
-                }
+            self.upLoas(task: update, success: { (_) in
+                UIAlertController.showAlertWith(title: "", message: "成功更新", in: self)
             })
         }
     }
@@ -148,7 +146,7 @@ class DetailChatViewController: BaseViewController {
             scrollLastMessage(animated: true)
             let sendMessageTask = SendMessageTask(msg: message!)
             requestWith(task: sendMessageTask, success: { (_) in
-                
+                self.getNewsMessage()
             }, failure: { (_) in
                 
             })
@@ -168,6 +166,7 @@ class MyCellMessage: UITableViewCell {
     @IBOutlet weak var contentMsg: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var heightOfStatus: NSLayoutConstraint!
     
     override func awakeFromNib() {
         test.tintColor = UIColor.green
@@ -205,6 +204,7 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
         cell?.binData(message: myMessage)
         if indexPath.row == (listMessage.count - 1) {
             cell?.status.isHidden = false
+            cell?.heightOfStatus.constant = 14.5
             if myMessage.isRead {
                 cell?.status.text = "seen"
             } else {
@@ -212,6 +212,7 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
             }
         } else {
             cell?.status.isHidden = true
+            cell?.heightOfStatus.constant = 0
         }
         return cell!
     }

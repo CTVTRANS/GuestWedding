@@ -14,6 +14,7 @@ class BaseDailog: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        contenView.layer.borderColor = UIColor.rgb(191, 157, 107).cgColor
         //        self.backgroundColor = UIColor.rgb(red: 0, green: 0, blue: 0)
     }
     

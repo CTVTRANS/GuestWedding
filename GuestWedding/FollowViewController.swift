@@ -10,6 +10,7 @@ import UIKit
 
 class FollowViewController: BaseViewController {
 
+    @IBOutlet weak var nameCompany: UILabel!
     @IBOutlet weak var nameMember: UITextField!
     
     override func viewDidLoad() {
@@ -17,6 +18,7 @@ class FollowViewController: BaseViewController {
         nameMember.delegate = self
         nameMember.layer.borderColor = UIColor.rgb(248, 54, 123).cgColor
         setupNavigation()
+        nameCompany.text = Member.shared.nameCompany
     }
     
     @IBAction func pressedSearch(_ sender: Any) {

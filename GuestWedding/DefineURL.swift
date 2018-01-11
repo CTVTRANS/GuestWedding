@@ -20,6 +20,9 @@ let sendMessageURL = "/api/UpdateData.aspx?"
 let seachMemberURL = "/api/GetMemberSearch.aspx?"
 let updateMessageStatus = "/api/UpdateGuestMemberMessageStatus.aspx?"
 
+let getNumberNotice = "/api/GetGuestMessageCounts.aspx?"
+let updateNumberNotice = "/api/UpdateGuestMessageCountsStatus.aspx?"
+
 class DefineURL: NSObject {
 
 }

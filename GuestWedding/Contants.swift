@@ -12,11 +12,6 @@ class Contants {
     var numberNewMessage: Int = 0
     var numberNewSeat: Int = 0
     var numberNewQuestion: Int = 0
-    
-    var totalMessage: Int = 0
-    var totalSeat: Int = 0
-    var totalQuestion: Int = 0
-    
     var token = ""
     
     static let shared = Contants()

@@ -10,6 +10,7 @@ import UIKit
 
 class SeatViewController: BaseViewController {
 
+    @IBOutlet weak var nameCompany: UILabel!
     @IBOutlet weak var aceptButton: UIButton!
     @IBOutlet weak var openLinkWeb: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,6 +21,7 @@ class SeatViewController: BaseViewController {
         openLinkWeb.layer.borderColor = UIColor.rgb(248, 54, 123).cgColor
         titleLabel.layer.borderColor = UIColor.rgb(248, 54, 123).cgColor
         setupNavigation()
+        nameCompany.text = Member.shared.nameCompany
     }
     
     @IBAction func pressedOpenWeb(_ sender: Any) {
@@ -28,8 +30,9 @@ class SeatViewController: BaseViewController {
     }
     
     @IBAction func pressedAcept(_ sender: Any) {
-        let urlString =  Member.shared.linkweb
-        UIApplication.shared.openURL(URL(string: urlString)!)
+        if let url = URL(string: Member.shared.linkweb + "&index=11") {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     deinit {

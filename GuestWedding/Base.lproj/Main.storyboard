@@ -24,9 +24,6 @@
         <array key="華康超明體_(P).TTC">
             <string>DFMing-W12-WINP-BF</string>
         </array>
-        <array key="黑體W9-GB5.ttf">
-            <string>DFHeiW9-GB5-Bold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--婚禮助手 App-->
@@ -120,20 +117,23 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs4-Jc-wSz">
-                                <rect key="frame" x="73" y="232" width="175.5" height="17.5"/>
+                                <rect key="frame" x="74.5" y="232" width="171" height="17.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男方場 婚禮倒數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySM-e3-nGd">
-                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="17.5"/>
-                                        <fontDescription key="fontDescription" name="DFHeiW9-GB5-Bold" family="DFPHeiW9-GB" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男方場婚禮倒數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySM-e3-nGd">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.23529411759999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1K-fA-du3">
-                                        <rect key="frame" x="117.5" y="0.0" width="35" height="17.5"/>
+                                        <rect key="frame" x="113" y="0.0" width="35" height="17.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="Rk5-kg-8M8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="DFHeiW9-GB5-Bold" family="DFPHeiW9-GB" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019607843135" green="0.23529411764705882" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -141,10 +141,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-WO-clT">
-                                        <rect key="frame" x="160.5" y="0.0" width="15" height="17.5"/>
-                                        <fontDescription key="fontDescription" name="DFHeiW9-GB5-Bold" family="DFPHeiW9-GB" pointSize="15"/>
+                                        <rect key="frame" x="156" y="0.0" width="15" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.23529411759999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,26 +165,32 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnV-Hf-bS0">
-                                <rect key="frame" x="73" y="252.5" width="175.5" height="17.5"/>
+                                <rect key="frame" x="74.5" y="252.5" width="171" height="17.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="女方場 婚禮倒數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-M1-ijp">
-                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="17.5"/>
-                                        <fontDescription key="fontDescription" name="DFHeiW9-GB5-Bold" family="DFPHeiW9-GB" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="女方場婚禮倒數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-M1-ijp">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.23529411759999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJA-At-wuA">
-                                        <rect key="frame" x="160.5" y="0.0" width="15" height="17.5"/>
-                                        <fontDescription key="fontDescription" name="DFHeiW9-GB5-Bold" family="DFPHeiW9-GB" pointSize="15"/>
+                                        <rect key="frame" x="156" y="0.0" width="15" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.23529411759999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-ce-O6n">
-                                        <rect key="frame" x="117.5" y="0.0" width="35" height="17.5"/>
+                                        <rect key="frame" x="113" y="0.0" width="35" height="17.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="pP9-gc-gxc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="DFHeiW9-GB5-Bold" family="DFPHeiW9-GB" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019607843135" green="0.23529411764705882" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -826,6 +835,7 @@
                     </view>
                     <connections>
                         <outlet property="aceptButton" destination="397-WU-Rp2" id="tqo-77-rYU"/>
+                        <outlet property="nameCompany" destination="XXK-v4-Z1A" id="Dsk-YL-mHV"/>
                         <outlet property="openLinkWeb" destination="itc-aI-S7J" id="Ldh-bp-XPX"/>
                         <outlet property="titleLabel" destination="K7y-1W-DSm" id="IPm-qb-doh"/>
                     </connections>
@@ -920,7 +930,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2J-ck-eiZ">
-                                        <rect key="frame" x="84.5" y="83" width="137.5" height="23"/>
+                                        <rect key="frame" x="84.5" y="83.5" width="137.5" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="35D-nU-Yz3">
                                                 <userDefinedRuntimeAttributes>
@@ -939,7 +949,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-lT-9Gc">
-                                        <rect key="frame" x="84.5" y="114" width="137.5" height="23"/>
+                                        <rect key="frame" x="84.5" y="114.5" width="137.5" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="6vt-Q3-Xd3">
                                                 <userDefinedRuntimeAttributes>
@@ -976,7 +986,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vue-ae-HfU">
-                                        <rect key="frame" x="162" y="162" width="60" height="29"/>
+                                        <rect key="frame" x="162" y="162.5" width="60" height="29"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="siginButton" translatesAutoresizingMaskIntoConstraints="NO" id="nlE-Go-6Wx">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="29"/>
@@ -1584,6 +1594,7 @@
                         <barButtonItem key="rightBarButtonItem" image="ic_rightButton" id="FGl-0C-KBg"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="nameCompany" destination="fq6-O8-lyQ" id="cl5-Gc-frH"/>
                         <outlet property="nameMember" destination="Qlt-jz-w1K" id="H2m-Vg-f5A"/>
                     </connections>
                 </viewController>
@@ -1607,21 +1618,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f44-Dx-uqa">
-                                <rect key="frame" x="181" y="19" width="98" height="32"/>
+                                <rect key="frame" x="165" y="26" width="111" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="賓客名稱設定"/>
+                                <state key="normal" title=" 賓客名稱設定: ">
+                                    <color key="titleColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.72549019607843135" green="0.34509803921568627" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="pressedUpdateProfile:" destination="5em-Zy-5zV" eventType="touchUpInside" id="66P-pR-lIj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新人即時訊息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojz-q7-nNw">
-                                <rect key="frame" x="41" y="25" width="98" height="19.5"/>
+                                <rect key="frame" x="41" y="32" width="98" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OUH-Lj-Fwf">
-                                <rect key="frame" x="41" y="59" width="238" height="469"/>
+                                <rect key="frame" x="41" y="66" width="238" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberCell" rowHeight="78" id="kmF-3C-xO3" customClass="MemberCellMessage" customModule="GuestWedding" customModuleProvider="target">
@@ -1668,11 +1689,11 @@
                                             <outlet property="time" destination="xzP-l6-R1J" id="oVf-7O-0ft"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="70" id="yWJ-2r-Cto" customClass="MyCellMessage" customModule="GuestWedding" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="106" width="238" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="62" id="yWJ-2r-Cto" customClass="MyCellMessage" customModule="GuestWedding" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="106" width="238" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yWJ-2r-Cto" id="49o-iq-fwC">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="238" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_chat" translatesAutoresizingMaskIntoConstraints="NO" id="0Wo-XY-adW">
@@ -1717,8 +1738,11 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l88-uh-5T8">
-                                                    <rect key="frame" x="180" y="47" width="31" height="14.5"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l88-uh-5T8">
+                                                    <rect key="frame" x="199.5" y="47" width="11.5" height="14.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14.5" id="n6E-37-Zxk"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1730,8 +1754,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="l88-uh-5T8" secondAttribute="trailing" constant="27" id="FZK-uL-qeS"/>
                                                 <constraint firstItem="MO0-Lc-fkg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="49o-iq-fwC" secondAttribute="leading" constant="24" id="JVn-SW-IXU"/>
                                                 <constraint firstItem="4Fa-5r-vDv" firstAttribute="top" secondItem="49o-iq-fwC" secondAttribute="top" constant="5" id="PSF-UY-DbG"/>
-                                                <constraint firstAttribute="bottom" secondItem="l88-uh-5T8" secondAttribute="bottom" constant="8.5" id="a4l-CZ-Mwj"/>
                                                 <constraint firstAttribute="trailing" secondItem="l88-uh-5T8" secondAttribute="trailing" constant="27" id="aYp-yK-LbE"/>
+                                                <constraint firstAttribute="bottom" secondItem="l88-uh-5T8" secondAttribute="bottom" constant="0.5" id="adh-H1-tfO"/>
                                                 <constraint firstItem="0Wo-XY-adW" firstAttribute="trailing" secondItem="4Fa-5r-vDv" secondAttribute="trailing" constant="6" id="c0z-Tg-OAl"/>
                                                 <constraint firstItem="l88-uh-5T8" firstAttribute="top" secondItem="4Fa-5r-vDv" secondAttribute="bottom" id="eX7-85-zed"/>
                                                 <constraint firstItem="4Fa-5r-vDv" firstAttribute="leading" secondItem="MO0-Lc-fkg" secondAttribute="trailing" constant="8" id="fWj-yM-hnm"/>
@@ -1743,6 +1767,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="contentMsg" destination="i8W-7N-vb1" id="vDF-Tr-lDf"/>
+                                            <outlet property="heightOfStatus" destination="n6E-37-Zxk" id="wnd-Dr-kcw"/>
                                             <outlet property="status" destination="l88-uh-5T8" id="J7g-mu-YCJ"/>
                                             <outlet property="test" destination="0Wo-XY-adW" id="n8g-mP-ODY"/>
                                             <outlet property="time" destination="MO0-Lc-fkg" id="yDN-rx-A3x"/>
@@ -1880,9 +1905,9 @@
                             <constraint firstItem="2IU-bD-bK7" firstAttribute="leading" secondItem="UBJ-iU-vaO" secondAttribute="leading" id="V97-jw-anZ"/>
                             <constraint firstItem="2IU-bD-bK7" firstAttribute="top" secondItem="OUH-Lj-Fwf" secondAttribute="bottom" id="ZWs-Ah-7cl"/>
                             <constraint firstItem="f6B-OV-B9U" firstAttribute="top" secondItem="UBJ-iU-vaO" secondAttribute="top" id="ZkG-CJ-nj4"/>
-                            <constraint firstAttribute="trailing" secondItem="f44-Dx-uqa" secondAttribute="trailing" constant="41" id="aQW-gh-BkV"/>
+                            <constraint firstAttribute="trailing" secondItem="f44-Dx-uqa" secondAttribute="trailing" constant="44" id="aQW-gh-BkV"/>
                             <constraint firstItem="f44-Dx-uqa" firstAttribute="centerY" secondItem="ojz-q7-nNw" secondAttribute="centerY" id="biG-Si-Gze"/>
-                            <constraint firstItem="ojz-q7-nNw" firstAttribute="top" secondItem="KOW-Dt-gSa" secondAttribute="bottom" constant="5" id="hA7-qZ-gg5"/>
+                            <constraint firstItem="ojz-q7-nNw" firstAttribute="top" secondItem="KOW-Dt-gSa" secondAttribute="bottom" constant="12" id="hA7-qZ-gg5"/>
                             <constraint firstAttribute="trailing" secondItem="OUH-Lj-Fwf" secondAttribute="trailing" constant="41" id="obW-cm-qyB"/>
                             <constraint firstItem="Jts-Oe-QrW" firstAttribute="top" secondItem="f6B-OV-B9U" secondAttribute="bottom" id="rtU-Ve-SvN"/>
                         </constraints>

@@ -23,6 +23,7 @@ struct Member {
     static let kCounterWomanDate = "counterWomanDate"
     static let kLinkweb = "linkweb"
     static let kImageOfSeat = "imageOfSeat"
+    static let kNameCompany = "nameCompany"
 
     var idMember = ""
     var nameMember = ""
@@ -36,6 +37,7 @@ struct Member {
     var counterWomanDate = ""
     var linkweb: String = ""
     var imageOfSeat = ""
+    var nameCompany = ""
     
     static func decodeJson(_ json: JSON) -> Member {
         return Member(idMember: json["ACCOUNT"].stringValue,
@@ -49,7 +51,8 @@ struct Member {
                       counterManDate: json["ENGDTDCounter"].stringValue,
                       counterWomanDate: json["COUPLEENGDTDCounter"].stringValue,
                       linkweb: json["MEMBER_URL"].stringValue,
-                      imageOfSeat: json["MEMBER_DOC_TABLE_URL"].stringValue
+                      imageOfSeat: json["MEMBER_DOC_TABLE_URL"].stringValue,
+                      nameCompany: json["COMPANYNM"].stringValue
         )
     }
     static var shared = Member()
@@ -81,6 +84,7 @@ class HeperMember: NSObject, NSCoding {
         aCoder.encode(member?.counterWomanDate, forKey: Member.kCounterWomanDate)
         aCoder.encode(member?.linkweb, forKey: Member.kLinkweb)
         aCoder.encode(member?.imageOfSeat, forKey: Member.kImageOfSeat)
+        aCoder.encode(member?.nameCompany, forKey: Member.kNameCompany)
     }
     
     var member: Member?
@@ -102,7 +106,8 @@ class HeperMember: NSObject, NSCoding {
         let counterMan = aDecoder.decodeObject(forKey: Member.kCounterManDate) as? String,
         let counterWoman = aDecoder.decodeObject(forKey: Member.kCounterWomanDate) as? String,
         let linkWed = aDecoder.decodeObject(forKey: Member.kLinkweb) as? String,
-        let imageOfSeat =  aDecoder.decodeObject(forKey: Member.kImageOfSeat) as? String else {
+        let imageOfSeat =  aDecoder.decodeObject(forKey: Member.kImageOfSeat) as? String,
+        let companyName =  aDecoder.decodeObject(forKey: Member.kNameCompany) as? String  else {
                 member = nil
                 super.init()
                 return nil
@@ -119,7 +124,8 @@ class HeperMember: NSObject, NSCoding {
                         counterManDate: counterMan,
                         counterWomanDate: counterWoman,
                         linkweb: linkWed,
-                        imageOfSeat: imageOfSeat)
+                        imageOfSeat: imageOfSeat,
+                        nameCompany: companyName)
         super.init()
     }
 }

@@ -23,18 +23,18 @@ class LeftMenuCell: UITableViewCell {
         let seatNumber = Contants.shared.numberNewSeat
         let questionNumber = Contants.shared.numberNewQuestion
         self.name.text = name
-        if index == 0 || index == 1 || index == 5 {
+        if index == 0 || index == 4 {
             viewOfNotice.isHidden = true
         }
-        if index == 2 {
+        if index == 1 {
             viewOfNotice.isHidden = !(messageNumber > 0) ? true : false
             numberNotice.text = (messageNumber > 9) ? "9" : String(messageNumber)
         }
-        if index == 3 {
+        if index == 2 {
             viewOfNotice.isHidden = !(seatNumber > 0) ? true : false
             numberNotice.text = (seatNumber > 9) ? "9" : String(seatNumber)
         }
-        if index == 4 {
+        if index == 3 {
             viewOfNotice.isHidden = !(questionNumber > 0) ? true : false
             numberNotice.text = (questionNumber > 9) ? "9" : String(questionNumber)
         }
@@ -86,26 +86,23 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
             return
         case 1:
             Contants.shared.numberNewMessage = 0
-            let notice = NoticeMember.getNotice()
-            notice.numberMessage = Contants.shared.totalMessage
-            NoticeMember.saveNotice(noice: notice)
             NotificationCenter.default.post(name: notificationName, object: nil)
             vc = storyboard?.instantiateViewController(withIdentifier: "DetailChatViewController") as? DetailChatViewController
+            let task = UpdateNotice(type: 1)
+            requestWith(task: task, success: { (_) in}) { (_) in}
         case 2:
             Contants.shared.numberNewSeat = 0
-            let notice = NoticeMember.getNotice()
-            notice.numberSeat = Contants.shared.totalSeat
-            NoticeMember.saveNotice(noice: notice)
             NotificationCenter.default.post(name: notificationName, object: nil)
             vc = storyboard?.instantiateViewController(withIdentifier: "SeatViewController") as? SeatViewController
+            let task = UpdateNotice(type: 2)
+            requestWith(task: task, success: { (_) in}) { (_) in}
         case 3:
             Contants.shared.numberNewQuestion = 0
-            let notice = NoticeMember.getNotice()
-            notice.numberQuestion = Contants.shared.totalQuestion
-            NoticeMember.saveNotice(noice: notice)
             NotificationCenter.default.post(name: notificationName, object: nil)
             UIApplication.shared.openURL(URL(string: "http://www.freewed.com.tw/app/fac.aspx?ACCT=freewed")!)
             swVC?.revealToggle(animated: true)
+            let task = UpdateNotice(type: 4)
+            requestWith(task: task, success: { (_) in}) { (_) in}
             return
         case 4:
             vc = storyboard?.instantiateViewController(withIdentifier: "FollowViewController") as? FollowViewController
