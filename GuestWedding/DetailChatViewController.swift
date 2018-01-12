@@ -49,6 +49,8 @@ class DetailChatViewController: BaseViewController {
     }
     
     @objc func popViewController() {
+        timer?.invalidate()
+        timer = nil
         navigationController?.popViewController(animated: false)
     }
     
@@ -60,7 +62,7 @@ class DetailChatViewController: BaseViewController {
     }
     
     func getMessage() {
-        let getMessageTask = GetMessageTask( userID: member.idMember, page: page, limit: 30)
+        let getMessageTask = GetMessageTask( userID: member.idMember, page: page, limit: 20)
         requestWith(task: getMessageTask, success: { (data) in
             if let arrayMessage = data as? [Message] {
                 self.isLoading = false
@@ -143,7 +145,7 @@ class DetailChatViewController: BaseViewController {
                         UIAlertController.showAlertWith(title: "", message: "成功更新", in: self)
                     }
                 }, failure: { (_) in
-                    
+
                 })
             })
         }
@@ -175,8 +177,6 @@ class DetailChatViewController: BaseViewController {
     }
     
     deinit {
-        timer?.invalidate()
-        timer = nil
         NotificationCenter.default.removeObserver(self)
     }
 }
@@ -282,7 +282,7 @@ extension DetailChatViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let chooseImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             dismiss(animated: true, completion: { [unowned self] in

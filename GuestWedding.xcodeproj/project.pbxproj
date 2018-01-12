@@ -21,7 +21,6 @@
 		9D032CEC1FA8275D0081D840 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */; };
 		9D032CEE1FA82CD90081D840 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CED1FA82CD90081D840 /* FollowViewController.swift */; };
 		9D032CF01FA82CF20081D840 /* SeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CEF1FA82CF20081D840 /* SeatViewController.swift */; };
-		9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF11FA82D330081D840 /* ChatViewController.swift */; };
 		9D032CF41FA82D400081D840 /* DetailChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D032CF31FA82D400081D840 /* DetailChatViewController.swift */; };
 		9D0686171FFCB97500E5D78C /* GetNumberMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0686161FFCB97500E5D78C /* GetNumberMessage.swift */; };
 		9D0686191FFCBD4400E5D78C /* UpdateNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0686181FFCBD4400E5D78C /* UpdateNotice.swift */; };
@@ -75,7 +74,6 @@
 		9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		9D032CED1FA82CD90081D840 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		9D032CEF1FA82CF20081D840 /* SeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatViewController.swift; sourceTree = "<group>"; };
-		9D032CF11FA82D330081D840 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9D032CF31FA82D400081D840 /* DetailChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailChatViewController.swift; sourceTree = "<group>"; };
 		9D06440120034CF6009237A4 /* GuestWedding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GuestWedding.entitlements; sourceTree = "<group>"; };
 		9D0686161FFCB97500E5D78C /* GetNumberMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNumberMessage.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				9D032CEB1FA8275D0081D840 /* LeftMenuViewController.swift */,
 				9D032CED1FA82CD90081D840 /* FollowViewController.swift */,
 				9D032CEF1FA82CF20081D840 /* SeatViewController.swift */,
-				9D032CF11FA82D330081D840 /* ChatViewController.swift */,
 				9D032CF31FA82D400081D840 /* DetailChatViewController.swift */,
 				9D073A0A1FF262ED009F2568 /* SplashViewcontroller.swift */,
 			);
@@ -435,7 +432,6 @@
 				9DEEF6F81FB9444100FEE1AE /* Storage.swift in Sources */,
 				9D0686171FFCB97500E5D78C /* GetNumberMessage.swift in Sources */,
 				9D0686191FFCBD4400E5D78C /* UpdateNotice.swift in Sources */,
-				9D032CF21FA82D330081D840 /* ChatViewController.swift in Sources */,
 				9D1F476E1FED18F7002CDD7D /* UpdateToken.swift in Sources */,
 				9D58D3621FEA1BA900200A77 /* GetInfoMember.swift in Sources */,
 				9D073A0B1FF262ED009F2568 /* SplashViewcontroller.swift in Sources */,
