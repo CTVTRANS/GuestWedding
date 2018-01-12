@@ -24,9 +24,11 @@ class SeatViewController: BaseViewController {
         nameCompany.text = Member.shared.nameCompany
     }
     
-    @IBAction func pressedOpenWeb(_ sender: Any) {
-        let urlSeatImage = Member.shared.imageOfSeat
-        UIApplication.shared.openURL(URL(string: urlSeatImage)!)
+    @IBAction func pressedOpenWebSeat(_ sender: Any) {
+        let urlSeatImage = "http://www.freewed.com.tw/app/love.aspx?ACCT=\(Member.shared.idMember)&index=13"
+        if let url = URL(string: urlSeatImage) {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     @IBAction func pressedAcept(_ sender: Any) {

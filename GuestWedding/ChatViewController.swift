@@ -19,18 +19,7 @@ class ChatViewController: BaseViewController {
         table.tableFooterView = UIView()
         table.estimatedRowHeight = 140
         setupNavigation()
-//        getMember()
     }
-    
-//    func getMember() {
-//        let getInfo = SiginTask(idGuest: Guest.shared.account!, nameMember: <#String#>)
-//        requestWith(task: getInfo) { (data) in
-//            if let data = data as? (Guest, [Member]) {
-//                self.listMember = data.1
-//                self.table.reloadData()
-//            }
-//        }
-//    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)

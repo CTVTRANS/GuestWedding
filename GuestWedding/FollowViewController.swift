@@ -23,8 +23,8 @@ class FollowViewController: BaseViewController {
     
     @IBAction func pressedSearch(_ sender: Any) {
         nameMember.endEditing(true)
-        showActivity(inView: self.view)
         if nameMember.text != "" {
+            showActivity(inView: self.view)
             let task = FindMember(nameSearch: nameMember.text!)
             requestWith(task: task, success: { (data) in
                 self.stopActivityIndicator()
@@ -57,6 +57,9 @@ class FollowViewController: BaseViewController {
                     let memberCache = Cache<Member>()
                     memberCache.remove()
                     memberCache.save(object: member)
+                    
+                    let cacheGuest = Cache<Guest>()
+                    cacheGuest.save(object: Guest.shared)
                     self.navigationController?.popViewController(animated: true)
                 }
             }, failure: { (error) in

@@ -24,13 +24,10 @@ class SetupProfile: BaseDailog, UIImagePickerControllerDelegate, UINavigationCon
         avatar.layer.cornerRadius = heightOfAvatar.constant / 2
         picker.delegate = self
         avatar.sd_setImage(with: URL(string: Guest.shared.avatar))
+        name.text = Guest.shared.usename
     }
     
     @IBAction func pressedSendChange(_ sender: Any) {
-        if name.text == "" {
-            changeProfile(Guest.shared.account)
-            return
-        }
         changeProfile(name.text!)
     }
     

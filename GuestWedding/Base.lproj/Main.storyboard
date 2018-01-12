@@ -117,10 +117,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs4-Jc-wSz">
-                                <rect key="frame" x="74.5" y="232" width="171" height="17.5"/>
+                                <rect key="frame" x="72.5" y="232" width="175" height="17.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男方場婚禮倒數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySM-e3-nGd">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="17.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="男方場 婚禮倒數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySM-e3-nGd">
+                                        <rect key="frame" x="0.0" y="0.0" width="109" height="17.5"/>
                                         <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.23529411759999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1K-fA-du3">
-                                        <rect key="frame" x="113" y="0.0" width="35" height="17.5"/>
+                                        <rect key="frame" x="117" y="0.0" width="35" height="17.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="Rk5-kg-8M8"/>
                                         </constraints>
@@ -141,7 +141,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-WO-clT">
-                                        <rect key="frame" x="156" y="0.0" width="15" height="17.5"/>
+                                        <rect key="frame" x="160" y="0.0" width="15" height="17.5"/>
                                         <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.23529411759999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -165,10 +165,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnV-Hf-bS0">
-                                <rect key="frame" x="74.5" y="252.5" width="171" height="17.5"/>
+                                <rect key="frame" x="72.5" y="252.5" width="175" height="17.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="女方場婚禮倒數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-M1-ijp">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="17.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="女方場 婚禮倒數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-M1-ijp">
+                                        <rect key="frame" x="0.0" y="0.0" width="109" height="17.5"/>
                                         <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.23529411759999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -177,7 +177,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJA-At-wuA">
-                                        <rect key="frame" x="156" y="0.0" width="15" height="17.5"/>
+                                        <rect key="frame" x="160" y="0.0" width="15" height="17.5"/>
                                         <fontDescription key="fontDescription" name="MicrosoftJhengHeiBold" family="Microsoft JhengHei" pointSize="15"/>
                                         <color key="textColor" red="0.72549019609999998" green="0.23529411759999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3i8-ce-O6n">
-                                        <rect key="frame" x="113" y="0.0" width="35" height="17.5"/>
+                                        <rect key="frame" x="117" y="0.0" width="35" height="17.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="pP9-gc-gxc"/>
                                         </constraints>
@@ -762,7 +762,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="pressedOpenWeb:" destination="xGE-s4-abn" eventType="touchUpInside" id="zrt-rm-ruD"/>
+                                    <action selector="pressedOpenWebSeat:" destination="xGE-s4-abn" eventType="touchUpInside" id="Ocn-3M-M8T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="397-WU-Rp2">

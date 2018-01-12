@@ -24,7 +24,7 @@ class UpdateGuestInfo: LKNetwork {
     }
     
     override func path() -> String {
-        return "/api/UpdateData.aspx?id=0912345678"
+        return "/api/UpdateData.aspx?id=" + Guest.shared.account
     }
     
     override func parameters() -> [String: Any] {

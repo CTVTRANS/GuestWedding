@@ -110,8 +110,9 @@ class MainViewController: BaseViewController {
     }
     
     @IBAction func pressedOpenWeb(_ sender: Any) {
-        let url = URL(string: (member?.linkweb)!)
-        UIApplication.shared.openURL(url!)
+        if let url = URL(string: Member.shared.linkweb) {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     @IBAction func pressedMessage(_ sender: Any) {
@@ -167,7 +168,10 @@ class MainViewController: BaseViewController {
     }
     
     func sendToken() {
-        let token = (Contants.shared.token == "") ? nil :  Contants.shared.token
+        if Contants.shared.token == "" {
+            return
+        }
+        let token = Contants.shared.token
         let update = UpdateToken(token: token)
         self.upLoas(task: update, success: { (data) in
             if let msg = data as? String {

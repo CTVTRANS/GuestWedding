@@ -15,10 +15,10 @@ class SplashViewcontroller: BaseViewController {
         let guestCache = Cache<Guest>()
         let memberCache = Cache<Member>()
         let guest = guestCache.fetchObject()
-        guard guest != nil, guest?.account != "" else {
+        let member = memberCache.fetchObject()
+        guard guest != nil, guest?.account != "", member != nil, member?.idMember != "" else {
             if let vc = storyboard?.instantiateViewController(withIdentifier: "SiginViewController") as? SiginViewController {
                 navigationController?.pushViewController(vc, animated: false)
-//                self.present(vc, animated: false, completion: nil)
             }
             return
         }

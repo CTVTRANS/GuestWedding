@@ -20,7 +20,7 @@ class UpdateNotice: LKNetwork {
         return updateNumberNotice
     }
     
-    override func parameters() -> [String : Any] {
+    override func parameters() -> [String: Any] {
         return ["id": Guest.shared.account, "t": type]
     }
     
@@ -28,4 +28,3 @@ class UpdateNotice: LKNetwork {
         return response
     }
 }
-

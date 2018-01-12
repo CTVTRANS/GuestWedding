@@ -125,7 +125,7 @@ class DetailChatViewController: BaseViewController {
         view.removeGestureRecognizer(tap!)
     }
     
-    @IBAction func pressedUpdateProfile(_ sender: Any) {
+    func showUpdateView() {
         popView?.show()
         popView?.callBack = { [unowned self] in
             self.pickPhoto()
@@ -133,13 +133,34 @@ class DetailChatViewController: BaseViewController {
         popView.changeProfile = { [unowned self] (name) in
             let update = UpdateGuestInfo(data: self.avatar, username: name, mobile: "", email: "")
             self.upLoas(task: update, success: { (_) in
-                UIAlertController.showAlertWith(title: "", message: "成功更新", in: self)
+                let task = GetInfo(idGuest: Guest.shared.account, nameMember: Member.shared.idMember)
+                self.requestWith(task: task, success: { (data) in
+                    if let data = data as? (Guest, Member) {
+                        let guest = data.0
+                        Guest.shared = guest
+                        let caheGuest = Cache<Guest>()
+                        caheGuest.save(object: guest)
+                        UIAlertController.showAlertWith(title: "", message: "成功更新", in: self)
+                    }
+                }, failure: { (_) in
+                    
+                })
             })
         }
     }
     
+    @IBAction func pressedUpdateProfile(_ sender: Any) {
+        showUpdateView()
+    }
+    
     @IBAction func pressedSendMsg(_ sender: Any) {
-        if textMessage.text != nil {
+        guard Guest.shared.account != Guest.shared.usename, Int(Guest.shared.usename) == nil else {
+            UIAlertController.showAlertWith(title: "", message: "名稱要設定好才能發訊息", in: self, compeletionHandler: {
+                self.showUpdateView()
+            })
+            return
+        }
+        if textMessage.text != "" {
             isScrollTop = false
             let message = textMessage.text
             self.textMessage.text = ""
@@ -206,9 +227,9 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
             cell?.status.isHidden = false
             cell?.heightOfStatus.constant = 14.5
             if myMessage.isRead {
-                cell?.status.text = "seen"
+                cell?.status.text = "已讀"
             } else {
-                cell?.status.text = "sent"
+                cell?.status.text = "未讀"
             }
         } else {
             cell?.status.isHidden = true
