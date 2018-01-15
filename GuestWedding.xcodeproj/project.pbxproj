@@ -30,6 +30,7 @@
 		9D076F3C1FCE6161008D8334 /* UpdateGuestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */; };
 		9D0941EC1FF3969000F6765C /* SearchMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0941EB1FF3969000F6765C /* SearchMember.swift */; };
 		9D0941EE1FF396D200F6765C /* SearchMember.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0941ED1FF396D200F6765C /* SearchMember.xib */; };
+		9D0D082820091BB10022CC8F /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D082720091BB10022CC8F /* ChangeProfileViewController.swift */; };
 		9D114FCF1FEE160A0070107C /* 黑體W9-GB5.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */; };
 		9D123BC91FF4E95D00EC0F54 /* UpdateStatusMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D123BC81FF4E95D00EC0F54 /* UpdateStatusMessage.swift */; };
 		9D1F476C1FED0714002CDD7D /* 華康超明體_(P).TTC in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */; };
@@ -84,6 +85,7 @@
 		9D076F3B1FCE6161008D8334 /* UpdateGuestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGuestInfo.swift; sourceTree = "<group>"; };
 		9D0941EB1FF3969000F6765C /* SearchMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMember.swift; sourceTree = "<group>"; };
 		9D0941ED1FF396D200F6765C /* SearchMember.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchMember.xib; sourceTree = "<group>"; };
+		9D0D082720091BB10022CC8F /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
 		9D114FCE1FEE16050070107C /* 黑體W9-GB5.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "黑體W9-GB5.ttf"; sourceTree = "<group>"; };
 		9D123BC81FF4E95D00EC0F54 /* UpdateStatusMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStatusMessage.swift; sourceTree = "<group>"; };
 		9D1F476A1FED070A002CDD7D /* 華康超明體_(P).TTC */ = {isa = PBXFileReference; lastKnownFileType = file; path = "華康超明體_(P).TTC"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				9D032CEF1FA82CF20081D840 /* SeatViewController.swift */,
 				9D032CF31FA82D400081D840 /* DetailChatViewController.swift */,
 				9D073A0A1FF262ED009F2568 /* SplashViewcontroller.swift */,
+				9D0D082720091BB10022CC8F /* ChangeProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			files = (
 				9D123BC91FF4E95D00EC0F54 /* UpdateStatusMessage.swift in Sources */,
 				9D8C605E1FE288800064DDED /* FindMember.swift in Sources */,
+				9D0D082820091BB10022CC8F /* ChangeProfileViewController.swift in Sources */,
 				9DCDEE531FA988350055FE59 /* DefineURL.swift in Sources */,
 				9D2373891FF497F00033C091 /* MemberViewCell.swift in Sources */,
 				9D032CE81FA820E80081D840 /* MainViewController.swift in Sources */,

@@ -1699,12 +1699,12 @@
                                                     <rect key="frame" x="191" y="7" width="45" height="35"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8/24 23:34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO0-Lc-fkg">
-                                                    <rect key="frame" x="96" y="30.5" width="74" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8/24 23:34" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MO0-Lc-fkg">
+                                                    <rect key="frame" x="96" y="31" width="74" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="74" id="4YK-zG-bDe"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Calibri" family="Calibri" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.20392156862745098" green="0.28627450980392155" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1737,11 +1737,8 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l88-uh-5T8">
-                                                    <rect key="frame" x="199.5" y="47" width="11.5" height="14.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="14.5" id="n6E-37-Zxk"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l88-uh-5T8">
+                                                    <rect key="frame" x="158.5" y="16.5" width="11.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1749,24 +1746,20 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="4Fa-5r-vDv" secondAttribute="trailing" constant="8" id="9Fn-Gz-K7r"/>
+                                                <constraint firstItem="MO0-Lc-fkg" firstAttribute="top" secondItem="l88-uh-5T8" secondAttribute="bottom" id="AYE-z9-CSC"/>
+                                                <constraint firstItem="4Fa-5r-vDv" firstAttribute="leading" secondItem="l88-uh-5T8" secondAttribute="trailing" constant="8" id="C0m-4W-HEN"/>
                                                 <constraint firstItem="0Wo-XY-adW" firstAttribute="top" secondItem="4Fa-5r-vDv" secondAttribute="top" constant="2" id="DYd-ad-djm"/>
-                                                <constraint firstAttribute="trailing" secondItem="l88-uh-5T8" secondAttribute="trailing" constant="27" id="FZK-uL-qeS"/>
-                                                <constraint firstItem="MO0-Lc-fkg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="49o-iq-fwC" secondAttribute="leading" constant="24" id="JVn-SW-IXU"/>
                                                 <constraint firstItem="4Fa-5r-vDv" firstAttribute="top" secondItem="49o-iq-fwC" secondAttribute="top" constant="5" id="PSF-UY-DbG"/>
-                                                <constraint firstAttribute="trailing" secondItem="l88-uh-5T8" secondAttribute="trailing" constant="27" id="aYp-yK-LbE"/>
-                                                <constraint firstAttribute="bottom" secondItem="l88-uh-5T8" secondAttribute="bottom" constant="0.5" id="adh-H1-tfO"/>
                                                 <constraint firstItem="0Wo-XY-adW" firstAttribute="trailing" secondItem="4Fa-5r-vDv" secondAttribute="trailing" constant="6" id="c0z-Tg-OAl"/>
-                                                <constraint firstItem="l88-uh-5T8" firstAttribute="top" secondItem="4Fa-5r-vDv" secondAttribute="bottom" id="eX7-85-zed"/>
                                                 <constraint firstItem="4Fa-5r-vDv" firstAttribute="leading" secondItem="MO0-Lc-fkg" secondAttribute="trailing" constant="8" id="fWj-yM-hnm"/>
                                                 <constraint firstItem="MO0-Lc-fkg" firstAttribute="bottom" secondItem="4Fa-5r-vDv" secondAttribute="bottom" id="mFj-aB-AzQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
-                                            <constraint firstItem="i8W-7N-vb1" firstAttribute="width" relation="lessThanOrEqual" secondItem="yWJ-2r-Cto" secondAttribute="width" constant="-100" id="5Uv-ok-3wL"/>
+                                            <constraint firstItem="i8W-7N-vb1" firstAttribute="width" relation="lessThanOrEqual" secondItem="yWJ-2r-Cto" secondAttribute="width" constant="-125" id="5Uv-ok-3wL"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="contentMsg" destination="i8W-7N-vb1" id="vDF-Tr-lDf"/>
-                                            <outlet property="heightOfStatus" destination="n6E-37-Zxk" id="wnd-Dr-kcw"/>
                                             <outlet property="status" destination="l88-uh-5T8" id="J7g-mu-YCJ"/>
                                             <outlet property="test" destination="0Wo-XY-adW" id="n8g-mP-ODY"/>
                                             <outlet property="time" destination="MO0-Lc-fkg" id="yDN-rx-A3x"/>
@@ -1807,7 +1800,7 @@
                                             <action selector="pressedSendMsg:" destination="5em-Zy-5zV" eventType="touchUpInside" id="Yjd-Qa-OyE"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VAP-CJ-7lN">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VAP-CJ-7lN">
                                         <rect key="frame" x="52" y="5.5" width="212" height="29.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1824,6 +1817,9 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="adjustFontToRealIPhoneSize" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>

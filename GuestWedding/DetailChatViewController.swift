@@ -20,7 +20,7 @@ class DetailChatViewController: BaseViewController {
     private var avatar: NSData?
     
     private var popView: SetupProfile!
-    private let picker = UIImagePickerController()
+    private var picker: UIImagePickerController?
     private var page: Int = 1
     private var isLoading = false
     private var isMoreData = true
@@ -37,7 +37,6 @@ class DetailChatViewController: BaseViewController {
         getMessage()
         setupKeyboard()
         NotificationCenter.default.addObserver(self, selector: #selector(getNewsMessage), name: Notification.Name("recivePush"), object: nil)
-        picker.delegate = self
         popView = SetupProfile.instance() as? SetupProfile
         timer = Timer.scheduledTimer(timeInterval: 120, target: self, selector: #selector(reGetMessage), userInfo: nil, repeats: true)
     }
@@ -62,7 +61,7 @@ class DetailChatViewController: BaseViewController {
     }
     
     func getMessage() {
-        let getMessageTask = GetMessageTask( userID: member.idMember, page: page, limit: 20)
+        let getMessageTask = GetMessageTask( userID: member.idMember, page: page, limit: 40)
         requestWith(task: getMessageTask, success: { (data) in
             if let arrayMessage = data as? [Message] {
                 self.isLoading = false
@@ -85,6 +84,7 @@ class DetailChatViewController: BaseViewController {
                 }
             }
         }) { (error) in
+            self.stopActivityIndicator()
             UIAlertController.showAlertWith(title: "", message: error, in: self)
         }
     }
@@ -130,6 +130,8 @@ class DetailChatViewController: BaseViewController {
     func showUpdateView() {
         popView?.show()
         popView?.callBack = { [unowned self] in
+            self.picker = UIImagePickerController()
+            self.picker?.delegate = self
             self.pickPhoto()
         }
         popView.changeProfile = { [unowned self] (name) in
@@ -187,7 +189,6 @@ class MyCellMessage: UITableViewCell {
     @IBOutlet weak var contentMsg: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var status: UILabel!
-    @IBOutlet weak var heightOfStatus: NSLayoutConstraint!
     
     override func awakeFromNib() {
         test.tintColor = UIColor.green
@@ -198,6 +199,11 @@ class MyCellMessage: UITableViewCell {
         let date = Date.convertToDateWith(timeInt: message.time, withFormat: "yyyy-MM-dd'T'HH-mm-ss")
         let timeMessage = Date.convert(date: date!, toString: "MM/dd HH:mm")
         time.text = timeMessage
+        if message.isRead {
+            status.text = "已讀"
+        } else {
+            status.text = "未讀"
+        }
     }
 }
 
@@ -223,18 +229,6 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
     func myCellMsg(indexPath: IndexPath, myMessage: Message) -> MyCellMessage {
         let cell = table.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? MyCellMessage
         cell?.binData(message: myMessage)
-        if indexPath.row == (listMessage.count - 1) {
-            cell?.status.isHidden = false
-            cell?.heightOfStatus.constant = 14.5
-            if myMessage.isRead {
-                cell?.status.text = "已讀"
-            } else {
-                cell?.status.text = "未讀"
-            }
-        } else {
-            cell?.status.isHidden = true
-            cell?.heightOfStatus.constant = 0
-        }
         return cell!
     }
     
@@ -271,12 +265,12 @@ extension DetailChatViewController: UITableViewDataSource, UITableViewDelegate {
 extension DetailChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func pickPhoto() {
-        picker.navigationBar.tintColor = UIColor.blue
-        picker.allowsEditing = true
-        picker.sourceType = .photoLibrary
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-        picker.modalPresentationStyle = .custom
-        present(picker, animated: true, completion: nil)
+        picker?.navigationBar.tintColor = UIColor.blue
+        picker?.allowsEditing = true
+        picker?.sourceType = .photoLibrary
+        picker?.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picker?.modalPresentationStyle = .custom
+        present(picker!, animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
